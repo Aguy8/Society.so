@@ -1,74 +1,164 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
+import Icon from '../components/Icon.jsx'
 
-const SERVICES = [
-  { n: 'API Society', uptime: '99.98 %' },
-  { n: 'Application Web', uptime: '99.99 %' },
-  { n: 'Application Mobile', uptime: '99.95 %' },
-  { n: 'Paiements Mobile Money', uptime: '99.91 %' },
-  { n: 'Notifications Push', uptime: '99.97 %' },
-  { n: 'Webhooks', uptime: '99.89 %' },
-  { n: 'CDN & Médias', uptime: '100 %' },
-  { n: 'Base de données', uptime: '99.99 %' },
+const services = [
+  { name: 'API REST', desc: 'Tous les endpoints operationnels', uptime: '99.98 %', status: 'operational' },
+  { name: 'Application Web', desc: 'app.society.ci', uptime: '99.99 %', status: 'operational' },
+  { name: 'Application Mobile', desc: 'iOS & Android', uptime: '99.97 %', status: 'operational' },
+  { name: 'Paiements & Mobile Money', desc: 'Orange Money, Wave, MTN MoMo', uptime: '99.94 %', status: 'operational' },
+  { name: 'Notifications & SMS', desc: 'Push, SMS, e-mail', uptime: '99.96 %', status: 'operational' },
+  { name: 'Webhooks', desc: 'Livraison des evenements', uptime: '99.91 %', status: 'operational' },
+  { name: 'CDN & Medias', desc: 'Photos, fichiers, documents', uptime: '100.00 %', status: 'operational' },
+  { name: 'Base de donnees', desc: 'Stockage & replication', uptime: '100.00 %', status: 'operational' },
 ]
 
+const days = Array.from({ length: 30 }, (_, i) => {
+  const d = new Date(2026, 3, 6 - (29 - i))
+  return {
+    label: d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' }),
+    status: 'ok',
+  }
+})
+
 export default function Statut() {
-  const now = new Date()
   return (
     <div className="page">
       <Nav />
 
-      <section style={{ padding: '120px 64px 80px', background: '#E8FBF1' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, padding: '10px 24px', background: '#0F8B4F', color: 'white', borderRadius: 999, fontSize: 16, fontWeight: 700, marginBottom: 32 }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#3DDC84', animation: 'pulse 2s infinite' }} />
-            Tous les systèmes sont opérationnels
+      <section style={{ padding: '120px 64px 64px', background: '#F8F8F8' }}>
+        <div className="container">
+          <span className="eyebrow">Statut du systeme</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 24 }}>
+            <div style={{ width: 20, height: 20, borderRadius: 999, background: '#16A34A', boxShadow: '0 0 0 6px rgba(22,163,74,0.2)', flexShrink: 0 }} />
+            <h1 style={{ fontSize: 72, lineHeight: 0.95, color: '#0a0a0a', fontWeight: 900 }}>
+              Tous les systemes sont operationnels.
+            </h1>
           </div>
-          <h1 style={{ fontSize: 80, lineHeight: 0.95, color: '#0a0a0a' }}>Statut des services<br /><span style={{ color: '#0F8B4F' }}>Society</span>.</h1>
-          <p style={{ fontSize: 16, marginTop: 24, color: '#6B6B6B' }}>Dernière vérification : {now.toLocaleTimeString('fr-FR')} — {now.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</p>
+          <p style={{ fontSize: 17, marginTop: 24, color: '#3A3A3A', maxWidth: 600, lineHeight: 1.6 }}>
+            Derniere verification : 6 mai 2026 a 14h23 GMT. Uptime global sur 30 jours : <strong>99,97 %</strong>.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 56 }}>
+            {[
+              { label: 'Uptime global 30j', value: '99,97 %', color: '#16A34A' },
+              { label: 'Incidents ce mois', value: '0', color: '#16A34A' },
+              { label: 'Temps de reponse API', value: '142 ms', color: '#0E47AB' },
+              { label: 'Disponibilite CDN', value: '100 %', color: '#16A34A' },
+            ].map((s, i) => (
+              <div key={i} style={{ padding: '28px 24px', background: 'white', border: '1px solid #EBEBEB', borderRadius: 20 }}>
+                <div style={{ fontSize: 36, fontWeight: 900, color: s.color, letterSpacing: '-0.02em' }}>{s.value}</div>
+                <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 8 }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section style={{ padding: '80px 64px' }}>
+      <section style={{ padding: '64px 64px' }}>
         <div className="container">
-          <h2 style={{ fontSize: 40, marginBottom: 32 }}>Statut des composants</h2>
-          <div style={{ background: 'white', borderRadius: 24, border: '1px solid #E5E5E5', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
-            {SERVICES.map((s, i) => (
-              <div key={i} style={{ padding: '22px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: i < SERVICES.length - 1 ? '1px solid #F2F2F2' : 'none' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#3DDC84', flexShrink: 0 }} />
-                  <div style={{ fontWeight: 600, fontSize: 16 }}>{s.n}</div>
+          <span className="eyebrow">Services</span>
+          <h2 style={{ fontSize: 40, marginTop: 16, fontWeight: 800 }}>Statut en temps reel.</h2>
+
+          <div style={{ marginTop: 40, border: '1px solid #EBEBEB', borderRadius: 24, overflow: 'hidden', background: 'white' }}>
+            {services.map((s, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 24, alignItems: 'center', padding: '24px 32px', borderBottom: i < services.length - 1 ? '1px solid #F0F0F0' : 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                  <div style={{ width: 10, height: 10, borderRadius: 999, background: '#16A34A', boxShadow: '0 0 0 3px rgba(22,163,74,0.2)', flexShrink: 0 }} />
+                  <div>
+                    <div style={{ fontSize: 15, fontWeight: 700, color: '#0a0a0a' }}>{s.name}</div>
+                    <div style={{ fontSize: 13, color: '#9B9B9B', marginTop: 2 }}>{s.desc}</div>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: '#0F8B4F' }}>Opérationnel</div>
-                  <div style={{ fontSize: 13, color: '#6B6B6B' }}>Uptime 30j : {s.uptime}</div>
+                <div style={{ fontSize: 13, color: '#6B6B6B', textAlign: 'right' }}>
+                  Uptime 30j : <strong style={{ color: '#0a0a0a' }}>{s.uptime}</strong>
+                </div>
+                <div style={{ padding: '6px 14px', background: '#F0FDF4', color: '#16A34A', borderRadius: 999, fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+                  Operationnel
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div style={{ marginTop: 56 }}>
-            <h2 style={{ fontSize: 40, marginBottom: 32 }}>Disponibilité sur 30 jours</h2>
-            <div style={{ background: 'white', borderRadius: 24, padding: '32px 36px', border: '1px solid #E5E5E5' }}>
-              <div style={{ display: 'flex', gap: 4, alignItems: 'flex-end', height: 80 }}>
-                {Array.from({ length: 30 }).map((_, i) => (
-                  <div key={i} style={{ flex: 1, height: `${85 + Math.random() * 15}%`, background: '#3DDC84', borderRadius: 4, opacity: 0.85 + Math.random() * 0.15 }} />
-                ))}
+      <section style={{ padding: '64px 64px', background: '#F8F8F8' }}>
+        <div className="container">
+          <span className="eyebrow">Disponibilite</span>
+          <h2 style={{ fontSize: 40, marginTop: 16, fontWeight: 800 }}>30 derniers jours.</h2>
+          <p style={{ fontSize: 15, color: '#6B6B6B', marginTop: 8 }}>Chaque barre represente un jour. Vert = aucun incident.</p>
+
+          <div style={{ marginTop: 40, padding: '40px', background: 'white', borderRadius: 24, border: '1px solid #EBEBEB' }}>
+            <div style={{ display: 'flex', gap: 4, alignItems: 'flex-end' }}>
+              {days.map((d, i) => (
+                <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+                  <div style={{ width: '100%', height: 60, background: '#16A34A', borderRadius: 6, opacity: 0.85 + (Math.random() * 0.15) }} title={`${d.label} - Operationnel`} />
+                  {(i === 0 || i === 7 || i === 14 || i === 21 || i === 29) && (
+                    <div style={{ fontSize: 10, color: '#9B9B9B', whiteSpace: 'nowrap' }}>{d.label}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div style={{ display: 'flex', gap: 24, marginTop: 24, paddingTop: 20, borderTop: '1px solid #F0F0F0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ width: 12, height: 12, borderRadius: 3, background: '#16A34A' }} />
+                <span style={{ fontSize: 13, color: '#6B6B6B' }}>Operationnel</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, fontSize: 12, color: '#6B6B6B' }}>
-                <span>Il y a 30 jours</span>
-                <span style={{ fontWeight: 700, color: '#0F8B4F' }}>Uptime global : 99.96 %</span>
-                <span>Aujourd'hui</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ width: 12, height: 12, borderRadius: 3, background: '#FCA5A5' }} />
+                <span style={{ fontSize: 13, color: '#6B6B6B' }}>Incident</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ width: 12, height: 12, borderRadius: 3, background: '#FDE68A' }} />
+                <span style={{ fontSize: 13, color: '#6B6B6B' }}>Degradation partielle</span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div style={{ marginTop: 56 }}>
-            <h2 style={{ fontSize: 40, marginBottom: 32 }}>Historique des incidents</h2>
-            <div style={{ padding: 48, background: '#E8FBF1', borderRadius: 24, textAlign: 'center' }}>
-              <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
-              <h3 style={{ fontSize: 28 }}>Aucun incident signalé</h3>
-              <p style={{ fontSize: 16, color: '#6B6B6B', marginTop: 8 }}>Aucun incident ou dégradation de service n'a été enregistré sur les 90 derniers jours.</p>
+      <section style={{ padding: '64px 64px' }}>
+        <div className="container">
+          <span className="eyebrow">Historique des incidents</span>
+          <h2 style={{ fontSize: 40, marginTop: 16, fontWeight: 800 }}>Aucun incident recent.</h2>
+
+          <div style={{ marginTop: 40, padding: '48px', background: '#F8F8F8', borderRadius: 24, textAlign: 'center' }}>
+            <div style={{ width: 64, height: 64, borderRadius: 999, background: '#F0FDF4', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+              <Icon name="check" size={28} color="#16A34A" />
+            </div>
+            <h3 style={{ fontSize: 24, fontWeight: 800 }}>Aucun incident sur les 90 derniers jours</h3>
+            <p style={{ fontSize: 15, color: '#6B6B6B', marginTop: 12, maxWidth: 480, margin: '12px auto 0', lineHeight: 1.6 }}>
+              Society n'a connu aucune interruption de service, aucune degradation majeure et aucune fuite de donnees depuis le lancement de la plateforme. Nous maintenons un uptime de 99,97 % sur l'ensemble de notre infrastructure.
+            </p>
+          </div>
+
+          <div style={{ marginTop: 40, padding: '28px 32px', background: 'white', border: '1px solid #EBEBEB', borderRadius: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 700 }}>S'abonner aux alertes statut</div>
+              <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 4 }}>Recevez un e-mail en cas d'incident ou de maintenance planifiee.</div>
+            </div>
+            <div style={{ display: 'flex', gap: 12 }}>
+              <input type="email" placeholder="votre@email.com" style={{ padding: '12px 18px', border: '1.5px solid #E5E5E5', borderRadius: 10, fontSize: 14, outline: 'none', width: 240 }} />
+              <button className="btn btn-primary">S'abonner</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '40px 64px 80px' }}>
+        <div className="container">
+          <div style={{ padding: '32px 40px', background: '#0a0a0a', borderRadius: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
+            <div>
+              <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', marginBottom: 8 }}>Vous detectez un probleme ?</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: 'white' }}>Contactez notre equipe de support 24/7</div>
+            </div>
+            <div style={{ display: 'flex', gap: 12 }}>
+              <a href="mailto:support@society.ci" style={{ padding: '14px 24px', background: '#D4A75B', color: '#0a0a0a', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
+                support@society.ci
+              </a>
+              <button style={{ padding: '14px 24px', background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 12, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>
+                <Icon name="chat" size={15} color="white" />
+              </button>
             </div>
           </div>
         </div>
