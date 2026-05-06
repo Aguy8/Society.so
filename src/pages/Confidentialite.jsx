@@ -1,84 +1,227 @@
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 
-function Art({ n, title, children }) {
-  return (
-    <div style={{ marginBottom: 40, paddingBottom: 40, borderBottom: '1px solid #E5E5E5' }}>
-      <h2 style={{ fontSize: 22, marginBottom: 16 }}>Article {n} — {title}</h2>
-      <div style={{ fontSize: 16, lineHeight: 1.85, color: '#3A3A3A' }}>{children}</div>
+const Section = ({ num, title, children }) => (
+  <div style={{ marginBottom: 56 }}>
+    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20, marginBottom: 20 }}>
+      <div style={{ width: 40, height: 40, borderRadius: 10, background: '#E8F0FD', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: 14, color: '#0E47AB' }}>
+        {num}
+      </div>
+      <h2 style={{ fontSize: 24, fontWeight: 800, color: '#0a0a0a', lineHeight: 1.2, paddingTop: 8 }}>{title}</h2>
     </div>
-  )
-}
+    <div style={{ fontSize: 15, color: '#3A3A3A', lineHeight: 1.85, paddingLeft: 60 }}>{children}</div>
+  </div>
+)
+
+const P = ({ children }) => <p style={{ marginBottom: 14 }}>{children}</p>
+const Ul = ({ items }) => (
+  <ul style={{ paddingLeft: 24, display: 'grid', gap: 8, marginBottom: 14 }}>
+    {items.map((item, i) => <li key={i}>{item}</li>)}
+  </ul>
+)
 
 export default function Confidentialite() {
   return (
     <div className="page">
       <Nav />
-      <section style={{ padding: '100px 64px 48px', background: '#F8F8F8' }}>
+
+      <section style={{ padding: '120px 64px 64px', background: '#0a0a0a' }}>
         <div className="container">
-          <span className="eyebrow">Légal</span>
-          <h1 style={{ fontSize: 64, marginTop: 20 }}>Politique de confidentialité</h1>
-          <p style={{ fontSize: 15, color: '#6B6B6B', marginTop: 16 }}>Dernière mise à jour : 1er janvier 2026 · Applicable à partir du 1er mars 2026</p>
-        </div>
-      </section>
-      <section style={{ padding: '60px 64px 100px' }}>
-        <div className="container" style={{ maxWidth: 860 }}>
-          <div style={{ padding: '24px 32px', background: '#E8EFFC', borderRadius: 16, marginBottom: 40, borderLeft: '4px solid #0E47AB' }}>
-            <p style={{ fontSize: 15, color: '#0a0a0a', margin: 0, lineHeight: 1.7 }}>
-              <strong>En résumé :</strong> Vos données vous appartiennent. Nous collectons le strict minimum nécessaire au fonctionnement de Society. Nous ne vendons jamais vos données. Elles sont hébergées en Afrique et vous pouvez les supprimer à tout moment.
-            </p>
+          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#D4A75B', display: 'block', marginBottom: 20 }}>POLITIQUE DE CONFIDENTIALITE</span>
+          <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900, maxWidth: 800 }}>
+            Vos donnees vous<br />
+            <span style={{ color: '#D4A75B' }}>appartiennent.</span>
+          </h1>
+          <p style={{ fontSize: 17, marginTop: 28, color: 'rgba(255,255,255,0.7)', maxWidth: 620, lineHeight: 1.65 }}>
+            Chez Society, la protection de vos donnees personnelles n'est pas une obligation reglementaire — c'est une valeur fondamentale. Cette politique explique clairement quelles donnees nous collectons, pourquoi, comment nous les utilisons et comment vous les controlez.
+          </p>
+          <div style={{ display: 'flex', gap: 24, marginTop: 40, flexWrap: 'wrap' }}>
+            <div style={{ padding: '12px 20px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10 }}>
+              <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>Entree en vigueur : </span>
+              <span style={{ fontSize: 12, color: 'white', fontWeight: 600 }}>1er janvier 2026</span>
+            </div>
+            <div style={{ padding: '12px 20px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10 }}>
+              <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>Version : </span>
+              <span style={{ fontSize: 12, color: 'white', fontWeight: 600 }}>2.1.0</span>
+            </div>
+            <div style={{ padding: '12px 20px', background: 'rgba(212,167,91,0.15)', border: '1px solid rgba(212,167,91,0.2)', borderRadius: 10 }}>
+              <span style={{ fontSize: 12, color: '#D4A75B', fontWeight: 600 }}>Conforme RGPD · Loi CI n° 2013-450</span>
+            </div>
           </div>
-
-          <Art n={1} title="Identité du responsable de traitement">
-            <p>Le responsable du traitement est <strong>Difero Fundry SARL</strong>, immatriculée au RCCM d'Abidjan sous le numéro CI-ABJ-2025-B-12345, dont le siège social est situé à l'Immeuble CCIG, Avenue Franchet d'Esperey, Plateau, Abidjan, Côte d'Ivoire.</p>
-            <p style={{ marginTop: 12 }}>Contact DPO (Délégué à la Protection des Données) : <strong>dpo@society.ci</strong></p>
-          </Art>
-
-          <Art n={2} title="Données collectées">
-            <p><strong>Lors de l'inscription :</strong> Nom de la communauté, type, description, pays, ville, email du fondateur, téléphone (optionnel).</p>
-            <p style={{ marginTop: 12 }}><strong>Lors de l'utilisation :</strong> Données des membres que vous ajoutez (nom, email, rôle), transactions financières effectuées via Society, logs d'activité pour la sécurité.</p>
-            <p style={{ marginTop: 12 }}><strong>Automatiquement :</strong> Adresse IP, type de navigateur, pages visitées, durée des sessions. Ces données sont anonymisées sous 30 jours.</p>
-          </Art>
-
-          <Art n={3} title="Finalités du traitement">
-            <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
-              <li>Fourniture et amélioration des services Society</li>
-              <li>Facturation et gestion des abonnements</li>
-              <li>Support client et résolution de problèmes</li>
-              <li>Prévention de la fraude et sécurité des comptes</li>
-              <li>Statistiques d'usage agrégées et anonymisées</li>
-              <li>Communications relatives aux mises à jour importantes du service</li>
-            </ul>
-          </Art>
-
-          <Art n={4} title="Durée de conservation">
-            <p>Les données des comptes actifs sont conservées pendant toute la durée du contrat et 2 ans après sa résiliation.</p>
-            <p style={{ marginTop: 12 }}>Les données de facturation sont conservées 10 ans conformément aux obligations comptables ivoiriennes.</p>
-            <p style={{ marginTop: 12 }}>Les données anonymisées à des fins statistiques peuvent être conservées indéfiniment.</p>
-          </Art>
-
-          <Art n={5} title="Vos droits">
-            <p>Conformément au RGPD et à la loi ivoirienne n°2013-450 relative à la protection des données à caractère personnel, vous disposez des droits suivants :</p>
-            <ul style={{ paddingLeft: 20, lineHeight: 2, marginTop: 12 }}>
-              <li><strong>Droit d'accès :</strong> Obtenir une copie de vos données personnelles</li>
-              <li><strong>Droit de rectification :</strong> Corriger des données inexactes</li>
-              <li><strong>Droit à l'effacement :</strong> Demander la suppression de vos données</li>
-              <li><strong>Droit à la portabilité :</strong> Recevoir vos données dans un format structuré</li>
-              <li><strong>Droit d'opposition :</strong> Vous opposer à certains traitements</li>
-            </ul>
-            <p style={{ marginTop: 16 }}>Pour exercer ces droits, contactez : <strong>dpo@society.ci</strong>. Réponse garantie sous 30 jours.</p>
-          </Art>
-
-          <Art n={6} title="Cookies">
-            <p>Society utilise des cookies essentiels au fonctionnement du service (session, authentification) et des cookies analytiques anonymisés. Aucun cookie publicitaire n'est utilisé.</p>
-            <p style={{ marginTop: 12 }}>Vous pouvez configurer vos préférences cookies via les paramètres de votre navigateur.</p>
-          </Art>
-
-          <Art n={7} title="Hébergement et transferts">
-            <p>L'ensemble de vos données est hébergé dans des datacenters situés sur le continent africain (Côte d'Ivoire et Ouganda). Aucun transfert hors d'Afrique n'est effectué sans votre consentement explicite.</p>
-          </Art>
         </div>
       </section>
+
+      <section style={{ padding: '64px 64px 80px' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 64, alignItems: 'start' }}>
+            <div style={{ position: 'sticky', top: 32 }}>
+              <div style={{ padding: '28px', background: '#F8F8F8', borderRadius: 20, border: '1px solid #EBEBEB' }}>
+                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', color: '#6B6B6B', marginBottom: 16 }}>SOMMAIRE</div>
+                <div style={{ display: 'grid', gap: 4 }}>
+                  {[
+                    '1. Responsable du traitement',
+                    '2. Donnees collectees',
+                    '3. Finalites du traitement',
+                    '4. Bases legales',
+                    '5. Durees de conservation',
+                    '6. Destinataires',
+                    '7. Transferts hors Afrique',
+                    '8. Vos droits',
+                    '9. Cookies',
+                    '10. Contact DPD',
+                  ].map((item, i) => (
+                    <button key={i} style={{ padding: '8px 12px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#3A3A3A', borderRadius: 8, lineHeight: 1.4 }}>
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ maxWidth: 680 }}>
+              <Section num="1" title="Responsable du traitement">
+                <P>Le responsable du traitement de vos donnees personnelles est :</P>
+                <div style={{ padding: '20px 24px', background: '#F8F8F8', borderRadius: 16, marginBottom: 16 }}>
+                  <strong>Difero Fundry SARL</strong><br />
+                  Immeuble CCIA, Avenue Marchand, Plateau, Abidjan — Cote d'Ivoire<br />
+                  RCCM : CI-ABJ-2025-B-12847<br />
+                  E-mail : legal@society.ci
+                </div>
+                <P>Notre Delegue a la Protection des Donnees (DPD) est contactable a : <strong>dpo@society.ci</strong></P>
+              </Section>
+
+              <Section num="2" title="Donnees collectees">
+                <P>Nous collectons les categories de donnees suivantes :</P>
+                <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
+                  {[
+                    { cat: 'Donnees d\'identite', exemples: 'Nom, prenom, photo de profil, date de naissance' },
+                    { cat: 'Donnees de contact', exemples: 'Adresse e-mail, numero de telephone, pays de residence' },
+                    { cat: 'Donnees de compte', exemples: 'Identifiant, mot de passe (hache), preferences, roles au sein des communautes' },
+                    { cat: 'Donnees de paiement', exemples: 'Numero de telephone Mobile Money (jamais les codes secrets), historique des transactions' },
+                    { cat: 'Donnees d\'utilisation', exemples: 'Pages visitees, fonctionnalites utilisees, duree des sessions, actions dans l\'application' },
+                    { cat: 'Donnees techniques', exemples: 'Adresse IP, type de navigateur, systeme d\'exploitation, identifiant de l\'appareil' },
+                    { cat: 'Donnees de communication', exemples: 'Messages envoyes dans les canaux de votre communaute, fichiers partages' },
+                  ].map((d, i) => (
+                    <div key={i} style={{ padding: '16px 20px', background: '#F8F8F8', borderRadius: 12, display: 'grid', gridTemplateColumns: '200px 1fr', gap: 16 }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#0a0a0a' }}>{d.cat}</div>
+                      <div style={{ fontSize: 13, color: '#6B6B6B' }}>{d.exemples}</div>
+                    </div>
+                  ))}
+                </div>
+                <P><strong>Ce que nous ne collectons pas :</strong> nous ne collectons jamais vos codes secrets, mots de passe bancaires, donnees biometriques, ni aucune donnee de sante.</P>
+              </Section>
+
+              <Section num="3" title="Finalites du traitement">
+                <P>Vos donnees sont traitees pour les finalites suivantes :</P>
+                <Ul items={[
+                  'Creation et gestion de votre compte utilisateur Society',
+                  'Fourniture des services de la plateforme (gestion communautaire, cotisations, evenements)',
+                  'Traitement des paiements et des collectes de fonds',
+                  'Envoi de notifications, rappels et communications lies a votre activite',
+                  "Amelioration de la plateforme et personnalisation de l'experience utilisateur",
+                  'Support technique et reponse a vos demandes',
+                  'Respect de nos obligations legales et reglementaires',
+                  'Prevention de la fraude et securite de la plateforme',
+                  'Etablissement de statistiques agregees et anonymisees sur l\'utilisation',
+                ]} />
+              </Section>
+
+              <Section num="4" title="Bases legales du traitement">
+                <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
+                  {[
+                    { base: 'Execution du contrat', desc: 'Pour fournir les services souscrits (compte, paiements, gestion de communaute)' },
+                    { base: 'Obligation legale', desc: 'Conformite fiscale, lutte contre la fraude, obligations ARTCI et BCEAO' },
+                    { base: 'Interet legitime', desc: 'Securite de la plateforme, prevention des abus, amelioration des services' },
+                    { base: 'Consentement', desc: 'Communications marketing, cookies analytiques, partage avec partenaires tiers' },
+                  ].map((b, i) => (
+                    <div key={i} style={{ padding: '16px 20px', border: '1px solid #EBEBEB', borderRadius: 12, display: 'grid', gridTemplateColumns: '180px 1fr', gap: 16 }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#0E47AB' }}>{b.base}</div>
+                      <div style={{ fontSize: 13, color: '#3A3A3A' }}>{b.desc}</div>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              <Section num="5" title="Durees de conservation">
+                <Ul items={[
+                  'Donnees de compte actif : duree de la relation contractuelle',
+                  'Donnees de compte supprime : 30 jours (permettant la reactivation), puis suppression definitive',
+                  'Donnees de paiement : 5 ans (obligation legale comptable)',
+                  'Journaux techniques (logs) : 12 mois glissants',
+                  "Donnees de support : 2 ans apres resolution du ticket",
+                  'Donnees de cookies : 13 mois maximum',
+                ]} />
+              </Section>
+
+              <Section num="6" title="Destinataires de vos donnees">
+                <P>Vos donnees peuvent etre communiquees aux categories de destinataires suivants, dans le cadre strict de nos missions :</P>
+                <Ul items={[
+                  'Prestataires de paiement (Orange Money, Wave, MTN) pour le traitement des transactions',
+                  'Hebergeur AfricaCloud Infrastructure Ltd pour le stockage securise',
+                  "Prestataires d'envoi de SMS et e-mail pour les notifications",
+                  'Autorites competentes en cas d\'obligation legale (ARTCI, justice)',
+                  "Les autres membres de votre communaute, uniquement les informations que vous choisissez de partager",
+                ]} />
+                <P>Nous ne vendons jamais vos donnees a des tiers a des fins publicitaires.</P>
+              </Section>
+
+              <Section num="7" title="Transferts hors du continent africain">
+                <P>Par defaut, toutes vos donnees sont traitees et stockees en Afrique (Cote d'Ivoire et Nigeria). Aucune donnee n'est transferee en dehors du continent africain sans votre accord prealable.</P>
+                <P>En cas de transfert exceptionnel (ex : recours a un service technique base en Europe), nous appliquons les clauses contractuelles types reconnues par la loi ivoirienne et le RGPD, et vous en informons via notre politique de confidentialite.</P>
+              </Section>
+
+              <Section num="8" title="Vos droits">
+                <P>Conformement a la loi ivoirienne n° 2013-450 et au RGPD, vous disposez des droits suivants :</P>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
+                  {[
+                    ['Droit d\'acces', 'Obtenir une copie de toutes vos donnees'],
+                    ['Droit de rectification', 'Corriger des donnees inexactes ou incompletes'],
+                    ['Droit a l\'effacement', 'Supprimer votre compte et toutes vos donnees'],
+                    ['Droit a la portabilite', 'Exporter vos donnees dans un format standard'],
+                    ['Droit d\'opposition', 'Vous opposer a certains traitements'],
+                    ['Droit de retrait', 'Retirer votre consentement a tout moment'],
+                  ].map(([r, d], i) => (
+                    <div key={i} style={{ padding: '16px', background: '#F8F8F8', borderRadius: 12 }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#0E47AB', marginBottom: 6 }}>{r}</div>
+                      <div style={{ fontSize: 13, color: '#6B6B6B' }}>{d}</div>
+                    </div>
+                  ))}
+                </div>
+                <P>Pour exercer ces droits, rendez-vous dans <strong>Parametres → Confidentialite</strong> depuis votre compte, ou contactez notre DPD.</P>
+              </Section>
+
+              <Section num="9" title="Cookies et traceurs">
+                <P>Notre site utilise trois categories de cookies :</P>
+                <Ul items={[
+                  'Cookies strictement necessaires : essentiels au fonctionnement (authentification, panier). Ne peuvent etre refuses.',
+                  'Cookies analytiques : mesurent l\'audience anonymement (Posthog, heberge sur nos serveurs). Consentement requis.',
+                  'Cookies de preference : memorisent vos choix d\'interface. Consentement requis.',
+                ]} />
+                <P>Vous pouvez gerer vos preferences a tout moment via notre centre de gestion des cookies accessible en bas de chaque page.</P>
+              </Section>
+
+              <Section num="10" title="Contact — Delegue a la Protection des Donnees">
+                <P>Pour toute question, reclamation ou exercice de vos droits, contactez notre DPD :</P>
+                <div style={{ padding: '28px', background: '#0E47AB', borderRadius: 20, color: 'white', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                  <div>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginBottom: 6 }}>E-mail</div>
+                    <div style={{ fontSize: 16, fontWeight: 700 }}>dpo@society.ci</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginBottom: 6 }}>Courrier</div>
+                    <div style={{ fontSize: 14, fontWeight: 600 }}>DPD — Difero Fundry SARL<br />Plateau, Abidjan, CI</div>
+                  </div>
+                  <div style={{ gridColumn: '1 / -1', paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.15)', fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>
+                    Delai de reponse : 30 jours calendaires maximum a compter de la reception de votre demande.
+                  </div>
+                </div>
+                <P style={{ marginTop: 16 }}>Si vous estimez que vos droits ne sont pas respectes, vous avez le droit de deposer une plainte aupres de l'Autorite de Regulation des Telecommunications de Cote d'Ivoire (ARTCI).</P>
+              </Section>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

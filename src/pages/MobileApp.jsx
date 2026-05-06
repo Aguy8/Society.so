@@ -1,54 +1,86 @@
+import { NavLink } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
-import { NavLink } from 'react-router-dom'
+import Icon from '../components/Icon.jsx'
+
+const features = [
+  { icon: 'users', title: 'Gestion des membres', desc: 'Ajoutez, gerez et communiquez avec tous vos membres depuis votre poche. Annuaire, profils, roles.' },
+  { icon: 'money', title: 'Cotisations Mobile Money', desc: 'Collectez les cotisations via Orange Money, Wave ou MTN MoMo en quelques secondes. Relances automatiques.' },
+  { icon: 'calendar', title: 'Evenements & billets', desc: 'Creez vos evenements, gerez les inscriptions et scannez les QR codes a l\'entree le jour J.' },
+  { icon: 'heart', title: 'Cagnottes solidaires', desc: 'Lancez et gerez des collectes de fonds depuis l\'app. Partagez en un tap sur WhatsApp ou Facebook.' },
+  { icon: 'chart', title: 'Tableau de bord en direct', desc: 'Cotisations recues, taux de participation, croissance des membres : tout en temps reel.' },
+  { icon: 'chat', title: 'Communication centralisee', desc: 'Canaux de discussion, annonces, sondages et notifications push pour engager vos membres.' },
+]
+
+const screenshots = [
+  { title: 'Accueil', subtitle: 'Vue d\'ensemble', color: '#0E47AB', screen: '/assets/screen_app1.png' },
+  { title: 'Cotisations', subtitle: 'Suivi en temps reel', color: '#0a0a0a', screen: '/assets/screen_app2.png' },
+  { title: 'Evenements', subtitle: 'Billetterie integree', color: '#1a3a6e', screen: '/assets/screen_app3.png' },
+]
 
 export default function MobileApp() {
   return (
     <div className="page">
       <Nav />
 
-      <section style={{ padding: '120px 64px', background: '#0E47AB', color: 'white', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: '#D4A75B', opacity: 0.15, filter: 'blur(80px)' }} />
+      <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(160deg, #0E47AB 0%, #0a2d6e 100%)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -80, right: -60, width: 500, height: 500, borderRadius: 999, background: 'rgba(212,167,91,0.12)' }} />
+        <div style={{ position: 'absolute', bottom: -60, left: 200, width: 300, height: 300, borderRadius: 999, background: 'rgba(255,255,255,0.04)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="two-col-grid" style={{ alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
-              <span className="eyebrow white">Application mobile</span>
-              <h1 style={{ fontSize: 80, marginTop: 24, lineHeight: 0.9, color: 'white' }}>Society<br />dans votre<br /><span style={{ color: '#D4A75B' }}>poche</span>.</h1>
-              <p style={{ fontSize: 18, marginTop: 32, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, maxWidth: 480 }}>
-                Gérez votre communauté depuis votre téléphone. Mobile-first, pensé pour l'Afrique, disponible hors-ligne partiel.
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', background: 'rgba(212,167,91,0.2)', borderRadius: 999, marginBottom: 32, border: '1px solid rgba(212,167,91,0.3)' }}>
+                <div style={{ width: 8, height: 8, borderRadius: 999, background: '#D4A75B' }} />
+                <span style={{ fontSize: 12, fontWeight: 700, color: '#D4A75B', letterSpacing: '0.04em' }}>APPLICATION MOBILE</span>
+              </div>
+              <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900 }}>
+                Votre communaute<br />
+                <span style={{ color: '#D4A75B' }}>dans votre poche.</span>
+              </h1>
+              <p style={{ fontSize: 18, marginTop: 28, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)', maxWidth: 480 }}>
+                L'application Society est disponible sur Android et iOS. Gerez, engagez et faites grandir votre communaute de n'importe ou en Afrique.
               </p>
-              <div style={{ display: 'flex', gap: 16, marginTop: 40, flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', background: 'white', color: '#0a0a0a', borderRadius: 14, cursor: 'pointer' }}>
-                  <div style={{ fontSize: 28 }}>🍎</div>
+              <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 14, cursor: 'pointer' }}>
+                  <div style={{ width: 32, height: 32, background: 'white', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon name="bolt" size={16} color="#0a0a0a" />
+                  </div>
                   <div>
-                    <div style={{ fontSize: 10, color: '#6B6B6B', fontWeight: 600 }}>Télécharger sur l'</div>
-                    <div style={{ fontSize: 16, fontWeight: 800 }}>App Store</div>
+                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.04em' }}>DISPONIBLE SUR</div>
+                    <div style={{ fontSize: 15, fontWeight: 800 }}>Google Play</div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', background: 'rgba(255,255,255,0.12)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 14, cursor: 'pointer' }}>
-                  <div style={{ fontSize: 28 }}>🤖</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 14, cursor: 'pointer' }}>
+                  <div style={{ width: 32, height: 32, background: 'white', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon name="layers" size={16} color="#0a0a0a" />
+                  </div>
                   <div>
-                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Disponible sur</div>
-                    <div style={{ fontSize: 16, fontWeight: 800 }}>Google Play</div>
+                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.04em' }}>TELECHARGER SUR</div>
+                    <div style={{ fontSize: 15, fontWeight: 800 }}>App Store</div>
                   </div>
                 </div>
               </div>
-              <div style={{ marginTop: 32, padding: 20, background: 'rgba(255,255,255,0.1)', borderRadius: 16, display: 'inline-block' }}>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Lancement Q4 2026 · Rejoignez la liste d'attente</div>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  <input type="email" placeholder="votre@email.com" style={{ flex: 1, padding: '10px 14px', border: 'none', borderRadius: 8, fontSize: 14, fontFamily: 'inherit', outline: 'none' }} />
-                  <button style={{ padding: '10px 16px', background: '#D4A75B', color: '#0a0a0a', border: 'none', borderRadius: 8, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }}>Notifier</button>
-                </div>
+              <div style={{ display: 'flex', gap: 32, marginTop: 48, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,0.12)', flexWrap: 'wrap' }}>
+                {[['4.8/5', 'Note moyenne'], ['12k+', 'Telechargements'], ['iOS & Android', 'Plateformes']].map(([v, l]) => (
+                  <div key={l}>
+                    <div style={{ fontSize: 24, fontWeight: 900, color: 'white', letterSpacing: '-0.02em' }}>{v}</div>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4 }}>{l}</div>
+                  </div>
+                ))}
               </div>
             </div>
-            <div style={{ display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'flex-end' }}>
-              {[
-                { bg: '#1a4fc2', label: 'Tableau de bord', h: 500 },
-                { bg: '#0a3a9e', label: 'Membres', h: 560 },
-                { bg: '#1a4fc2', label: 'Paiements', h: 480 },
-              ].map((p, i) => (
-                <div key={i} style={{ width: 140, height: p.h, background: p.bg, borderRadius: 28, border: '4px solid rgba(255,255,255,0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', padding: 16 }}>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.7)', textAlign: 'center' }}>{p.label}</div>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 20, alignItems: 'flex-end' }}>
+              {screenshots.map((s, i) => (
+                <div key={i} style={{ width: 160, transform: i === 1 ? 'scale(1.12)' : 'scale(0.92)', transformOrigin: 'bottom center', transition: 'transform 0.2s' }}>
+                  <div style={{ aspectRatio: '9 / 19.5', borderRadius: 36, border: '8px solid rgba(255,255,255,0.15)', background: s.color, overflow: 'hidden', boxShadow: i === 1 ? '0 40px 80px rgba(0,0,0,0.5)' : '0 20px 40px rgba(0,0,0,0.3)', position: 'relative' }}>
+                    <img src={s.screen} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${s.color} 100%)` }} />
+                    <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, textAlign: 'center' }}>
+                      <div style={{ fontSize: 12, fontWeight: 800, color: 'white' }}>{s.title}</div>
+                      <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)' }}>{s.subtitle}</div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -56,38 +88,82 @@ export default function MobileApp() {
         </div>
       </section>
 
-      <section style={{ padding: '100px 64px' }}>
+      <section style={{ padding: '80px 64px' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <span className="eyebrow">Fonctionnalités mobiles</span>
-            <h2 style={{ fontSize: 56, marginTop: 24 }}>Tout Society, <span style={{ color: '#0E47AB' }}>optimisé mobile</span>.</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-            {[
-              { e: '📱', t: 'Interface native', d: 'Conçu pour iOS et Android. Gestures naturelles, animations fluides, performance optimale même sur entrée de gamme.' },
-              { e: '🔌', t: 'Hors-ligne partiel', d: 'Consultez vos membres, validez des présences et accédez aux données clés même sans connexion. Synchronisation à la reconnexion.' },
-              { e: '🔔', t: 'Notifications push', d: 'Nouvelle cotisation, membre qui rejoint, message important. Restez informé en temps réel sans ouvrir l\'app.' },
-              { e: '📸', t: 'Scanner QR', d: 'Scan de billets d\'événements, validation de présences, partage de profil membre. Le QR code intégré à l\'app.' },
-              { e: '💰', t: 'Paiement en 2 taps', d: 'Orange Money, Wave, MTN MoMo. Payez ou collectez en 2 taps. Confirmation instantanée, reçu automatique.' },
-              { e: '🌍', t: 'Multi-langues', d: 'Français, Anglais, Dioula, Mooré. Sélectionnez la langue préférée de vos membres pour une adoption maximale.' },
-            ].map((f, i) => (
-              <div key={i} style={{ padding: '36px 32px', background: '#F8F8F8', borderRadius: 24 }}>
-                <div style={{ fontSize: 40, marginBottom: 20 }}>{f.e}</div>
-                <h3 style={{ fontSize: 22 }}>{f.t}</h3>
-                <p style={{ fontSize: 15, color: '#6B6B6B', marginTop: 10, lineHeight: 1.6 }}>{f.d}</p>
+          <span className="eyebrow">Fonctionnalites</span>
+          <h2 style={{ fontSize: 48, marginTop: 20, fontWeight: 800 }}>Tout ce dont vous avez besoin.</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 48 }}>
+            {features.map((f, i) => (
+              <div key={i} style={{ padding: '36px 32px', border: '1px solid #EBEBEB', borderRadius: 24, background: 'white' }}>
+                <div style={{ width: 48, height: 48, borderRadius: 14, background: '#E8F0FD', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                  <Icon name={f.icon} size={22} color="#0E47AB" />
+                </div>
+                <h3 style={{ fontSize: 18, fontWeight: 800 }}>{f.title}</h3>
+                <p style={{ fontSize: 14, color: '#3A3A3A', marginTop: 12, lineHeight: 1.65 }}>{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '80px 64px', background: '#F8F8F8' }}>
+      <section style={{ padding: '64px 64px', background: '#F8F8F8' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+            <div>
+              <span className="eyebrow">Telechargement instantane</span>
+              <h2 style={{ fontSize: 40, marginTop: 20, fontWeight: 800 }}>Scannez pour telecharger.</h2>
+              <p style={{ fontSize: 16, color: '#3A3A3A', marginTop: 16, lineHeight: 1.65 }}>
+                Scannez le QR code avec votre telephone pour etre redirige directement vers l'App Store ou le Google Play selon votre appareil. En moins de 2 minutes, votre communaute est dans votre poche.
+              </p>
+              <div style={{ display: 'flex', gap: 12, marginTop: 32 }}>
+                <div style={{ padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+                  Google Play
+                </div>
+                <div style={{ padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+                  App Store
+                </div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 24, justifyContent: 'center' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ width: 180, height: 180, background: '#0E47AB', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', position: 'relative' }}>
+                  <div style={{ width: 120, height: 120, background: 'white', borderRadius: 12, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 4, padding: 12 }}>
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <div key={i} style={{ background: [0,1,5,6,2,3,7,9,10,11,15,16,18,19,23,24].includes(i) ? '#0a0a0a' : 'white', borderRadius: 2 }} />
+                    ))}
+                  </div>
+                </div>
+                <div style={{ fontSize: 13, fontWeight: 700, marginTop: 12, color: '#0a0a0a' }}>Android</div>
+                <div style={{ fontSize: 11, color: '#9B9B9B' }}>Google Play</div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ width: 180, height: 180, background: '#0a0a0a', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
+                  <div style={{ width: 120, height: 120, background: 'white', borderRadius: 12, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 4, padding: 12 }}>
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <div key={i} style={{ background: [0,2,4,6,8,10,12,14,16,18,20,22,24,3,7,11,15,19].includes(i) ? '#0a0a0a' : 'white', borderRadius: 2 }} />
+                    ))}
+                  </div>
+                </div>
+                <div style={{ fontSize: 13, fontWeight: 700, marginTop: 12, color: '#0a0a0a' }}>iPhone</div>
+                <div style={{ fontSize: 11, color: '#9B9B9B' }}>App Store</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: '64px 64px 120px' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 56 }}>Disponible en Q4 2026.</h2>
-          <p style={{ fontSize: 18, marginTop: 16, color: '#6B6B6B', maxWidth: 500, margin: '16px auto 0' }}>
-            L'application est en développement. Rejoignez la bêta fermée pour en être parmi les premiers utilisateurs.
+          <h2 style={{ fontSize: 48, fontWeight: 800 }}>Pret a demarrer ?</h2>
+          <p style={{ fontSize: 17, color: '#6B6B6B', marginTop: 16, maxWidth: 480, margin: '16px auto 0', lineHeight: 1.6 }}>
+            Creez votre compte gratuitement et telechargez l'application en moins de 5 minutes.
           </p>
-          <NavLink to="/inscription" className="btn btn-primary btn-xl" style={{ marginTop: 40, display: 'inline-flex' }}>Rejoindre la bêta</NavLink>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
+            <NavLink to="/inscription" className="btn btn-primary btn-xl">
+              Creer mon compte gratuitement
+              <Icon name="arrow" size={16} color="white" />
+            </NavLink>
+          </div>
         </div>
       </section>
 
