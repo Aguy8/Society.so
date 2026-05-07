@@ -26,7 +26,7 @@ export default function Confirmation() {
             <div style={{ marginTop: 24, padding: '8px 16px', background: 'white', border: '1px solid #E5E5E5', borderRadius: 999, display: 'inline-flex', alignItems: 'center', gap: 12, fontSize: 13 }}>
               <span style={{ padding: '2px 10px', background: '#0F8B4F', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>● ACTIVÉ</span>
               <span>Plan Communauté · Essai 30 jours</span>
-              <span style={{ color: '#6B6B6B' }}>Expire le 12 mai 2026</span>
+              <span style={{ color: '#6B6B6B' }}>Accès bêta inclus</span>
             </div>
           </div>
 

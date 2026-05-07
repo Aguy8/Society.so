@@ -279,7 +279,7 @@ export default function MiseEnRelation() {
               Society nous a mis en relation avec deux mutuelles de Yamoussoukro. En 6 mois, nous avons lancé une campagne de dépistage qui a touché 4 000 femmes. Seuls, c'était impossible.
             </blockquote>
             <div style={{ marginTop: 40, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
-              <div style={{ width: 56, height: 56, borderRadius: '50%', backgroundImage: 'url(/assets/p_aw_fem_1.jpg)', backgroundSize: 'cover' }} />
+              <div style={{ width: 56, height: 56, borderRadius: '50%', backgroundImage: 'url(https://images.unsplash.com/photo-1531123897727-8f11ebb3a745?auto=format&fit=crop&w=800&q=80)', backgroundSize: 'cover' }} />
               <div style={{ textAlign: 'left' }}>
                 <div style={{ fontWeight: 800, fontSize: 17, color: 'white' }}>Dr. Aminata Coulibaly</div>
                 <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>Directrice, Association Cansein CI</div>

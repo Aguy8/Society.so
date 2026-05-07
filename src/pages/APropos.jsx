@@ -54,24 +54,22 @@ export default function APropos() {
         </div>
       </section>
 
-      {/* ROADMAP */}
+      {/* CHIFFRES CLÉS */}
       <section style={{ padding: '80px 64px', background: '#0E47AB', color: 'white' }}>
         <div className="container">
-          <span className="eyebrow white">Roadmap</span>
-          <h2 style={{ fontSize: 56, marginTop: 24, color: 'white' }}>De la validation au lancement.</h2>
-          <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 24, left: 24, right: 24, height: 2, background: 'rgba(255,255,255,0.2)' }} />
+          <span className="eyebrow white">En chiffres</span>
+          <h2 style={{ fontSize: 56, marginTop: 24, color: 'white' }}>Une opportunité immense. Un moment décisif.</h2>
+          <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
             {[
-              { p: 'Q2 2026', t: 'Validation', d: 'Enquête de 25 leaders communautaires. Construction de l\'équipe.' },
-              { p: 'Q3 2026', t: 'MVP', d: 'Développement des modules clés. Premiers partenariats.' },
-              { p: 'Q4 2026', t: 'Beta', d: 'Communautés pilotes. Tests terrain. Intégration paiements.' },
-              { p: 'Q1 2027', t: 'Lancement', d: 'Lancement officiel web + mobile. Cérémonie d\'ouverture.' },
+              { n: '150 000+', t: 'Communautés en CI', d: 'Associations, mutuelles, réseaux, groupes religieux — un marché inexploité.' },
+              { n: '85 %', t: 'Sans outil adapté', d: 'La quasi-totalité gère encore avec WhatsApp et Excel.' },
+              { n: '5–10h', t: 'Perdues/semaine', d: 'Chaque leader communautaire perd ce temps en administration manuelle.' },
+              { n: '1', t: 'Plateforme dédiée', d: 'Society — conçue en Afrique, pour les réalités africaines.' },
             ].map((m, i) => (
-              <div key={i} style={{ position: 'relative' }}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: i === 0 ? '#D4A75B' : 'rgba(255,255,255,0.15)', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 800, color: i === 0 ? '#0a0a0a' : 'white', position: 'relative', zIndex: 2 }}>{i + 1}</div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#D4A75B', marginTop: 20, letterSpacing: '0.04em' }}>{m.p}</div>
-                <div style={{ fontSize: 26, fontWeight: 800, marginTop: 4, letterSpacing: '-0.02em', color: 'white' }}>{m.t}</div>
-                <p style={{ fontSize: 14, marginTop: 8, color: 'rgba(255,255,255,0.75)' }}>{m.d}</p>
+              <div key={i} style={{ position: 'relative', padding: '32px 0' }}>
+                <div style={{ fontSize: 48, fontWeight: 900, letterSpacing: '-0.04em', color: '#D4A75B', lineHeight: 1 }}>{m.n}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, marginTop: 12, color: 'white' }}>{m.t}</div>
+                <p style={{ fontSize: 14, marginTop: 8, color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>{m.d}</p>
               </div>
             ))}
           </div>
@@ -90,14 +88,14 @@ export default function APropos() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
             {[
-              { n: 'Ange-Samuel KEKE', r: 'Co-fondateur · CEO', img: 'p_aw_hom_4.jpg' },
-              { n: 'Aïssatou D.', r: 'Head of Product', img: 'p_aw_fem_5.jpg' },
-              { n: 'Mamadou T.', r: 'Lead Engineering', img: 'p_aw_hom_5.jpg' },
-              { n: 'Salimata B.', r: 'Community & Growth', img: 'p_aw_fem_6.jpg' },
+              { n: 'Ange-Samuel KEKE', r: 'Co-fondateur · CEO', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80' },
+              { n: 'Aïssatou D.', r: 'Head of Product', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=800&q=80' },
+              { n: 'Mamadou T.', r: 'Lead Engineering', img: 'https://images.unsplash.com/photo-1578021046678-7fc9dcc0d07b?auto=format&fit=crop&w=800&q=80' },
+              { n: 'Salimata B.', r: 'Community & Growth', img: 'https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=800&q=80' },
             ].map((m, i) => (
               <div key={i}>
                 <div style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden' }}>
-                  <img src={`/assets/${m.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={m.n} />
+                  <img src={`./assets/${m.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={m.n} />
                 </div>
                 <div style={{ marginTop: 16, fontWeight: 700, fontSize: 17 }}>{m.n}</div>
                 <div style={{ fontSize: 14, color: '#6B6B6B' }}>{m.r}</div>

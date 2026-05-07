@@ -15,8 +15,8 @@ export default function Accueil() {
           <div className="hero-grid">
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px 6px 6px', background: '#F2F2F2', borderRadius: 999, marginBottom: 32 }}>
-                <span style={{ background: '#0E47AB', color: 'white', padding: '4px 10px', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>NEW</span>
-                <span style={{ fontSize: 13, fontWeight: 500 }}>Lancement officiel — Q3 2026</span>
+                <span style={{ background: '#0E47AB', color: 'white', padding: '4px 10px', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>BIENTÔT</span>
+                <span style={{ fontSize: 13, fontWeight: 500 }}>Rejoignez la liste d'attente</span>
               </div>
               <h1 className="hero-title">
                 Donnez<br />
@@ -38,8 +38,8 @@ export default function Accueil() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 56, flexWrap: 'wrap' }}>
                 <div className="avatars">
-                  {['p_aw_fem_1.jpg', 'p_aw_hom_1.jpg', 'p_aw_fem_3.jpg', 'p_aw_fem_4.jpg', 'p_aw_hom_2.jpg'].map(img => (
-                    <div key={img} style={{ backgroundImage: `url(/assets/${img})` }} />
+                  {['https://images.unsplash.com/photo-1531123897727-8f11ebb3a745?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1489424731084-a3d5bc15a39b?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'].map(img => (
+                    <div key={img} style={{ backgroundImage: `url(${img})` }} />
                   ))}
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function Accueil() {
               <div style={{ position: 'absolute', inset: 0, background: '#0E47AB', borderRadius: 40, transform: 'rotate(-3deg)' }} />
               <div style={{ position: 'absolute', top: 30, right: 40, width: 200, height: 200, background: '#D4A75B', borderRadius: 999 }} />
               <div style={{ position: 'absolute', top: 60, left: '50%', transform: 'translateX(-50%)', width: 280, aspectRatio: '9 / 19.5', borderRadius: 42, border: '10px solid #0a0a0a', overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.3)', background: '#0a0a0a' }}>
-                <img src="/assets/screen_app1.png" alt="Society app" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=400&q=80" alt="Society app" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
               <div style={{ position: 'absolute', top: 120, left: -20, background: 'white', padding: 16, borderRadius: 20, boxShadow: '0 20px 50px rgba(0,0,0,0.15)', width: 200 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
@@ -169,6 +169,14 @@ export default function Accueil() {
               <div className="module-tag" style={{ background: 'white' }}>03 — Mise en relation</div>
               <h3 style={{ fontSize: 28, marginTop: 12 }}>L'algorithme qui connecte.</h3>
               <p style={{ marginTop: 12, fontSize: 15 }}>Besoins ↔ ressources. Bénévoles, expertises, partenaires RSE.</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
+                <div style={{ display: 'flex' }}>
+                  {['https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80', 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80'].map((img, i) => (
+                    <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(${img})`, backgroundSize: 'cover', border: '2px solid white', marginLeft: i ? -10 : 0 }} />
+                  ))}
+                </div>
+                <div style={{ padding: '6px 14px', background: '#0E47AB', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>+ 12 matchs</div>
+              </div>
             </div>
 
             <div className="module-card module-dark" style={{ gridColumn: 'span 4' }}>
@@ -184,7 +192,13 @@ export default function Accueil() {
             <div className="module-card module-gradient" style={{ gridColumn: 'span 4' }}>
               <div className="module-tag" style={{ background: 'rgba(255,255,255,0.6)' }}>05 — Espace Leader</div>
               <h3 style={{ fontSize: 28, marginTop: 12 }}>Votre audience.<br />Votre algorithme.</h3>
-              <p style={{ marginTop: 12, fontSize: 15 }}>Q&A, lives, contenus premium — sans dépendre d'Instagram ou TikTok.</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 16, padding: '12px 14px', background: 'rgba(255,255,255,0.7)', borderRadius: 14, backdropFilter: 'blur(10px)' }}>
+                <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundImage: 'url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=800&q=80)', backgroundSize: 'cover', flexShrink: 0 }} />
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: 14 }}>Aïssatou D.</div>
+                  <div style={{ fontSize: 12, color: '#6B6B6B' }}>+ 4 200 fans abonnés</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -199,14 +213,14 @@ export default function Accueil() {
           </div>
           <div className="segments-grid">
             {[
-              { n: 'ONG & Associations', img: 'p_seg_ong.jpg', d: 'Coordonnez vos actions, prouvez votre impact, sécurisez vos bailleurs.', count: '20 000+' },
-              { n: 'Mutuelles & Tontines', img: 'p_seg_mut.jpg', d: 'Automatisez les cotisations, sécurisez les flux, fini les conflits.', count: '15 000+' },
-              { n: 'Alumni & Jeunesse', img: 'p_seg_alum.jpg', d: 'Reconnectez la diaspora, organisez événements et mentorat.', count: '8 000+' },
-              { n: 'Réseaux Pro', img: 'p_seg_pro.jpg', d: 'Espaces collaboratifs, contenus premium, mise en relation.', count: '6 000+' },
-              { n: 'Groupes religieux', img: 'p_seg_rel.jpg', d: 'Communication multi-paroisses, collectes traçables, fidèles engagés.', count: '12 000+' },
-              { n: 'Leaders & Influenceurs', img: 'p_seg_lead.jpg', d: 'Communauté propriétaire, monétisation directe, indépendance.', count: '4 000+' },
+              { n: 'ONG & Associations', img: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=800&q=80', d: 'Coordonnez vos actions, prouvez votre impact, sécurisez vos bailleurs.', count: '20 000+' },
+              { n: 'Mutuelles & Tontines', img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80', d: 'Automatisez les cotisations, sécurisez les flux, fini les conflits.', count: '15 000+' },
+              { n: 'Alumni & Jeunesse', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80', d: 'Reconnectez la diaspora, organisez événements et mentorat.', count: '8 000+' },
+              { n: 'Réseaux Pro', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80', d: 'Espaces collaboratifs, contenus premium, mise en relation.', count: '6 000+' },
+              { n: 'Groupes religieux', img: 'https://images.unsplash.com/photo-1514746676280-63eff6c01a95?auto=format&fit=crop&w=800&q=80', d: 'Communication multi-paroisses, collectes traçables, fidèles engagés.', count: '12 000+' },
+              { n: 'Leaders & Influenceurs', img: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80', d: 'Communauté propriétaire, monétisation directe, indépendance.', count: '4 000+' },
             ].map((s, i) => (
-              <div key={i} style={{ borderRadius: 24, overflow: 'hidden', position: 'relative', aspectRatio: '4/5', backgroundImage: `url(/assets/${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div key={i} style={{ borderRadius: 24, overflow: 'hidden', position: 'relative', aspectRatio: '4/5', backgroundImage: `url(${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%)' }} />
                 <div style={{ position: 'absolute', top: 20, right: 20, padding: '6px 12px', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>{s.count} en CI</div>
                 <div style={{ position: 'absolute', bottom: 28, left: 28, right: 28 }}>
@@ -252,7 +266,7 @@ export default function Accueil() {
         <div className="container">
           <div className="two-col-grid">
             <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '4/5' }}>
-              <img src="/assets/p_temoin.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="témoin" />
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="témoin" />
             </div>
             <div>
               <span className="eyebrow">Ils nous font confiance</span>
@@ -265,7 +279,7 @@ export default function Accueil() {
                   <div style={{ color: '#6B6B6B', fontSize: 15 }}>Présidente — Mutuelle des Femmes d'Abobo</div>
                 </div>
                 <div style={{ flex: 1, height: 1, background: '#E5E5E5' }} />
-                <div style={{ fontSize: 13, color: '#6B6B6B' }}>Bêta-testeuse depuis Mars 2026</div>
+                <div style={{ fontSize: 13, color: '#6B6B6B' }}>Bêta-testeuse — Mutuelle des Femmes d'Abobo</div>
               </div>
             </div>
           </div>
