@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 
@@ -52,10 +53,10 @@ export default function MentionsLegales() {
                     ['E-mail', 'legal@society.ci'],
                     ['Telephone', '+225 27 22 XX XX XX'],
                   ].map(([k, v]) => (
-                    <>
-                      <div key={k + 'k'} style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
-                      <div key={k + 'v'} style={{ fontSize: 14, color: '#0a0a0a' }}>{v}</div>
-                    </>
+                    <Fragment key={k}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
+                      <div style={{ fontSize: 14, color: '#0a0a0a' }}>{v}</div>
+                    </Fragment>
                   ))}
                 </div>
               </div>
@@ -71,10 +72,10 @@ export default function MentionsLegales() {
                     ['Site web', 'www.africacloud.ci'],
                     ['Telephone', '+225 27 XX XX XX XX'],
                   ].map(([k, v]) => (
-                    <>
-                      <div key={k + 'k'} style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
-                      <div key={k + 'v'} style={{ fontSize: 14, color: '#0a0a0a' }}>{v}</div>
-                    </>
+                    <Fragment key={k}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
+                      <div style={{ fontSize: 14, color: '#0a0a0a' }}>{v}</div>
+                    </Fragment>
                   ))}
                 </div>
               </div>
