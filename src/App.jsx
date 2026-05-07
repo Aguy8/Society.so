@@ -21,6 +21,8 @@ import MobileApp from './pages/MobileApp.jsx'
 import MentionsLegales from './pages/MentionsLegales.jsx'
 import Confidentialite from './pages/Confidentialite.jsx'
 import CGU from './pages/CGU.jsx'
+import Benevolat from './pages/Benevolat.jsx'
+import MiseEnRelation from './pages/MiseEnRelation.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 
 export default function App() {
@@ -50,6 +52,8 @@ export default function App() {
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />
         <Route path="/cgu" element={<CGU />} />
+        <Route path="/benevolat" element={<Benevolat />} />
+        <Route path="/mise-en-relation" element={<MiseEnRelation />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>

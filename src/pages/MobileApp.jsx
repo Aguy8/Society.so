@@ -3,19 +3,92 @@ import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Icon from '../components/Icon.jsx'
 
-const features = [
-  { icon: 'users', title: 'Gestion des membres', desc: 'Ajoutez, gerez et communiquez avec tous vos membres depuis votre poche. Annuaire, profils, roles.' },
-  { icon: 'money', title: 'Cotisations Mobile Money', desc: 'Collectez les cotisations via Orange Money, Wave ou MTN MoMo en quelques secondes. Relances automatiques.' },
-  { icon: 'calendar', title: 'Evenements & billets', desc: 'Creez vos evenements, gerez les inscriptions et scannez les QR codes a l\'entree le jour J.' },
-  { icon: 'heart', title: 'Cagnottes solidaires', desc: 'Lancez et gerez des collectes de fonds depuis l\'app. Partagez en un tap sur WhatsApp ou Facebook.' },
-  { icon: 'chart', title: 'Tableau de bord en direct', desc: 'Cotisations recues, taux de participation, croissance des membres : tout en temps reel.' },
-  { icon: 'chat', title: 'Communication centralisee', desc: 'Canaux de discussion, annonces, sondages et notifications push pour engager vos membres.' },
+const FEATURES = [
+  {
+    icon: 'users',
+    title: 'Feed communautaire',
+    desc: 'Un fil d\'actualité vivant, centré sur les causes et les communautés qui vous ressemblent. Photos, vidéos, campagnes.',
+    color: '#0E47AB',
+    bg: '#E8F0FD',
+  },
+  {
+    icon: 'shield',
+    title: 'Espace fondateur',
+    desc: 'Reporting, rapports financiers, gestion des membres, billetterie — tout votre tableau de bord dans votre poche.',
+    color: '#166534',
+    bg: '#F0FDF4',
+  },
+  {
+    icon: 'heart',
+    title: 'Campagnes & dons',
+    desc: 'Lancez une collecte, suivez les dons en temps réel, remerciez vos contributeurs depuis l\'application.',
+    color: '#9D174D',
+    bg: '#FDF2F8',
+  },
+  {
+    icon: 'calendar',
+    title: 'Événements & billets',
+    desc: 'Créez, publiez et vendez des billets. QR code de contrôle à l\'entrée, liste des présents, tout en mobile.',
+    color: '#8B5E1A',
+    bg: '#FDF6EC',
+  },
+  {
+    icon: 'spark',
+    title: 'Mise en relation',
+    desc: 'Rejoignez d\'autres organisations, créez des partenariats, collaborez sur des projets à impact.',
+    color: '#5C2E91',
+    bg: '#F3F0FF',
+  },
+  {
+    icon: 'star',
+    title: 'Espace créateur',
+    desc: 'Les leaders et personnalités publiques animent leur audience, diffusent du contenu exclusif, monétisent leur influence.',
+    color: '#C23B5A',
+    bg: '#FFF5F7',
+  },
 ]
 
-const screenshots = [
-  { title: 'Accueil', subtitle: 'Vue d\'ensemble', color: '#0E47AB', screen: '/assets/screen_app1.png' },
-  { title: 'Cotisations', subtitle: 'Suivi en temps reel', color: '#0a0a0a', screen: '/assets/screen_app2.png' },
-  { title: 'Evenements', subtitle: 'Billetterie integree', color: '#1a3a6e', screen: '/assets/screen_app3.png' },
+const SCREENS = [
+  {
+    label: 'Feed',
+    title: "Un fil d'actualité vivant",
+    desc: 'Découvrez les causes qui vous touchent. Suivez les communautés actives autour de vous. Chaque post raconte une histoire vraie.',
+    bg: '#0E47AB',
+    img: 'screen_app1.png',
+    checks: ['Communautés certifiées avec badge', 'Stories et publications photo/vidéo', 'Fil personnalisé selon vos intérêts'],
+    checkColor: '#0E47AB',
+    checkBg: '#E8F0FD',
+  },
+  {
+    label: 'Profil',
+    title: "Le dashboard de l'organisation",
+    desc: 'Reporting, membres, levées de fonds, gestion des bénévoles — toute la puissance de Society dans une interface sombre et claire.',
+    bg: '#0a0a0a',
+    img: 'screen_app2.png',
+    checks: ['Reporting & statistiques temps réel', 'Gestion des membres et bénévoles', 'Rapports financiers exportables'],
+    checkColor: '#D4A75B',
+    checkBg: '#2a2a2a',
+  },
+  {
+    label: 'Communauté',
+    title: 'Explorez et rejoignez',
+    desc: 'Parcourez par type : associations, ONG, mutuelles, institutions. Créez votre espace en quelques secondes.',
+    bg: '#1a1a1a',
+    img: 'screen_app3.png',
+    checks: ['8 types de communautés disponibles', "Création d'espace en 3 étapes", 'Recommandations personnalisées'],
+    checkColor: '#5C2E91',
+    checkBg: '#F3F0FF',
+  },
+  {
+    label: 'Créateur',
+    title: "L'espace des leaders",
+    desc: "Les influenceurs et personnalités publiques engagent leur audience, partagent du contenu exclusif et mobilisent leur communauté.",
+    bg: '#1E3A6E',
+    img: 'screen_app4.png',
+    checks: ['153K+ abonnés, gestion de l\'audience', 'Contenu exclusif et live streaming', 'Monétisation de l\'influence'],
+    checkColor: '#9D174D',
+    checkBg: '#FDF2F8',
+  },
 ]
 
 export default function MobileApp() {
@@ -23,147 +96,165 @@ export default function MobileApp() {
     <div className="page">
       <Nav />
 
-      <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(160deg, #0E47AB 0%, #0a2d6e 100%)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -80, right: -60, width: 500, height: 500, borderRadius: 999, background: 'rgba(212,167,91,0.12)' }} />
-        <div style={{ position: 'absolute', bottom: -60, left: 200, width: 300, height: 300, borderRadius: 999, background: 'rgba(255,255,255,0.04)' }} />
+      {/* HERO */}
+      <section style={{ padding: '120px 64px 80px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -200, left: -200, width: 600, height: 600, borderRadius: '50%', background: '#0E47AB', opacity: 0.12, filter: 'blur(80px)' }} />
+        <div style={{ position: 'absolute', bottom: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: '#D4A75B', opacity: 0.1, filter: 'blur(60px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', background: 'rgba(212,167,91,0.2)', borderRadius: 999, marginBottom: 32, border: '1px solid rgba(212,167,91,0.3)' }}>
-                <div style={{ width: 8, height: 8, borderRadius: 999, background: '#D4A75B' }} />
-                <span style={{ fontSize: 12, fontWeight: 700, color: '#D4A75B', letterSpacing: '0.04em' }}>APPLICATION MOBILE</span>
-              </div>
-              <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900 }}>
-                Votre communaute<br />
-                <span style={{ color: '#D4A75B' }}>dans votre poche.</span>
+              <span className="eyebrow dark">Application mobile</span>
+              <h1 style={{ fontSize: 88, lineHeight: 0.88, color: 'white', marginTop: 28 }}>
+                Society<br />
+                <span style={{ color: '#D4A75B' }}>dans votre</span><br />
+                poche.
               </h1>
-              <p style={{ fontSize: 18, marginTop: 28, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)', maxWidth: 480 }}>
-                L'application Society est disponible sur Android et iOS. Gerez, engagez et faites grandir votre communaute de n'importe ou en Afrique.
+              <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.75)', marginTop: 28, lineHeight: 1.6, maxWidth: 460 }}>
+                Gérez votre communauté, engagez vos membres, lancez des collectes et organisez des événements — depuis votre téléphone, à tout moment.
               </p>
-              <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 14, cursor: 'pointer' }}>
-                  <div style={{ width: 32, height: 32, background: 'white', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon name="bolt" size={16} color="#0a0a0a" />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.04em' }}>DISPONIBLE SUR</div>
-                    <div style={{ fontSize: 15, fontWeight: 800 }}>Google Play</div>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 14, cursor: 'pointer' }}>
-                  <div style={{ width: 32, height: 32, background: 'white', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon name="layers" size={16} color="#0a0a0a" />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.04em' }}>TELECHARGER SUR</div>
-                    <div style={{ fontSize: 15, fontWeight: 800 }}>App Store</div>
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: 32, marginTop: 48, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,0.12)', flexWrap: 'wrap' }}>
-                {[['4.8/5', 'Note moyenne'], ['12k+', 'Telechargements'], ['iOS & Android', 'Plateformes']].map(([v, l]) => (
-                  <div key={l}>
-                    <div style={{ fontSize: 24, fontWeight: 900, color: 'white', letterSpacing: '-0.02em' }}>{v}</div>
-                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4 }}>{l}</div>
-                  </div>
+              <div style={{ marginTop: 48, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                {[
+                  { icon: '▶', store: 'App Store', note: 'iOS bientôt' },
+                  { icon: '◆', store: 'Google Play', note: 'Android bientôt' },
+                ].map((btn, i) => (
+                  <a key={i} href="#notify" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', background: 'white', borderRadius: 14, textDecoration: 'none', color: '#0a0a0a', fontWeight: 700, fontSize: 14 }}>
+                    <div style={{ width: 32, height: 32, background: '#0a0a0a', borderRadius: 8, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                      <span style={{ color: 'white', fontSize: 14 }}>{btn.icon}</span>
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 800, fontSize: 14 }}>{btn.store}</div>
+                      <div style={{ fontSize: 11, color: '#6B6B6B', fontWeight: 500 }}>{btn.note}</div>
+                    </div>
+                  </a>
                 ))}
+              </div>
+              <div style={{ marginTop: 24, padding: '12px 18px', background: 'rgba(255,255,255,0.06)', borderRadius: 12, display: 'inline-flex', alignItems: 'center', gap: 10, border: '1px solid rgba(255,255,255,0.1)' }}>
+                <Icon name="calendar" size={15} color="#D4A75B" />
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Lancement T4 2026 · 2 000+ bêta-testeurs</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 20, alignItems: 'flex-end' }}>
-              {screenshots.map((s, i) => (
-                <div key={i} style={{ width: 160, transform: i === 1 ? 'scale(1.12)' : 'scale(0.92)', transformOrigin: 'bottom center', transition: 'transform 0.2s' }}>
-                  <div style={{ aspectRatio: '9 / 19.5', borderRadius: 36, border: '8px solid rgba(255,255,255,0.15)', background: s.color, overflow: 'hidden', boxShadow: i === 1 ? '0 40px 80px rgba(0,0,0,0.5)' : '0 20px 40px rgba(0,0,0,0.3)', position: 'relative' }}>
-                    <img src={s.screen} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to bottom, transparent 60%, ${s.color} 100%)` }} />
-                    <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, textAlign: 'center' }}>
-                      <div style={{ fontSize: 12, fontWeight: 800, color: 'white' }}>{s.title}</div>
-                      <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.6)' }}>{s.subtitle}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* Phone cluster */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 16, height: 560, overflow: 'hidden' }}>
+              <div className="phone-mockup" style={{ transform: 'rotate(-6deg) translateY(40px)', transformOrigin: 'bottom center' }}>
+                <img src="/assets/screen_app3.png" className="phone-screen" alt="Communauté" />
+              </div>
+              <div className="phone-mockup" style={{ transform: 'scale(1.08)', zIndex: 2, boxShadow: '0 60px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)' }}>
+                <img src="/assets/screen_app1.png" className="phone-screen" alt="Feed Society" />
+              </div>
+              <div className="phone-mockup" style={{ transform: 'rotate(6deg) translateY(40px)', transformOrigin: 'bottom center' }}>
+                <img src="/assets/screen_app2.png" className="phone-screen" alt="Dashboard" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '80px 64px' }}>
+      {/* STATS */}
+      <section style={{ padding: '0', background: '#D4A75B' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+          {[
+            { n: '4.8★', l: 'Note bêta-testeurs' },
+            { n: '2 000+', l: 'Inscrits bêta' },
+            { n: '< 2s', l: 'Temps de chargement' },
+            { n: '98%', l: 'Satisfaction globale' },
+          ].map((s, i) => (
+            <div key={i} style={{ padding: '32px 40px', textAlign: 'center', borderRight: i < 3 ? '1px solid rgba(0,0,0,0.1)' : 'none', flex: 1, minWidth: 150 }}>
+              <div style={{ fontSize: 40, fontWeight: 800, color: '#0a0a0a', letterSpacing: '-0.04em', lineHeight: 1 }}>{s.n}</div>
+              <div style={{ fontSize: 13, color: 'rgba(0,0,0,0.6)', marginTop: 6 }}>{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ÉCRANS DÉTAILLÉS */}
+      <section style={{ padding: '100px 64px', background: '#F8F8F8' }}>
         <div className="container">
-          <span className="eyebrow">Fonctionnalites</span>
-          <h2 style={{ fontSize: 48, marginTop: 20, fontWeight: 800 }}>Tout ce dont vous avez besoin.</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 48 }}>
-            {features.map((f, i) => (
-              <div key={i} style={{ padding: '36px 32px', border: '1px solid #EBEBEB', borderRadius: 24, background: 'white' }}>
-                <div style={{ width: 48, height: 48, borderRadius: 14, background: '#E8F0FD', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                  <Icon name={f.icon} size={22} color="#0E47AB" />
+          <div style={{ textAlign: 'center', marginBottom: 80 }}>
+            <span className="eyebrow">Découverte de l'app</span>
+            <h2 style={{ fontSize: 56, marginTop: 20 }}>Chaque écran,<br />une expérience.</h2>
+          </div>
+
+          <div style={{ display: 'grid', gap: 80 }}>
+            {SCREENS.map((screen, i) => (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', direction: i % 2 === 1 ? 'rtl' : 'ltr' }}>
+                <div style={{ direction: 'ltr' }}>
+                  <span style={{ display: 'inline-block', padding: '5px 14px', background: '#0E47AB', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 20 }}>
+                    {screen.label}
+                  </span>
+                  <h3 style={{ fontSize: 44, lineHeight: 1.05, letterSpacing: '-0.03em' }}>{screen.title}</h3>
+                  <p style={{ fontSize: 17, marginTop: 20, color: '#3A3A3A', lineHeight: 1.65 }}>{screen.desc}</p>
+                  <div style={{ marginTop: 28, display: 'grid', gap: 10 }}>
+                    {screen.checks.map((f, j) => (
+                      <div key={j} style={{ display: 'flex', gap: 12, alignItems: 'center', fontSize: 15, color: '#0a0a0a', fontWeight: 500 }}>
+                        <div style={{ width: 26, height: 26, borderRadius: '50%', background: screen.checkBg, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                          <span style={{ color: screen.checkColor, fontSize: 13, fontWeight: 800 }}>✓</span>
+                        </div>
+                        {f}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 style={{ fontSize: 18, fontWeight: 800 }}>{f.title}</h3>
-                <p style={{ fontSize: 14, color: '#3A3A3A', marginTop: 12, lineHeight: 1.65 }}>{f.desc}</p>
+                <div style={{ display: 'flex', justifyContent: 'center', direction: 'ltr' }}>
+                  <div className="phone-mockup" style={{ background: screen.bg }}>
+                    <img src={`/assets/${screen.img}`} className="phone-screen" alt={screen.label} />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '64px 64px', background: '#F8F8F8' }}>
+      {/* FONCTIONNALITÉS */}
+      <section style={{ padding: '100px 64px' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-            <div>
-              <span className="eyebrow">Telechargement instantane</span>
-              <h2 style={{ fontSize: 40, marginTop: 20, fontWeight: 800 }}>Scannez pour telecharger.</h2>
-              <p style={{ fontSize: 16, color: '#3A3A3A', marginTop: 16, lineHeight: 1.65 }}>
-                Scannez le QR code avec votre telephone pour etre redirige directement vers l'App Store ou le Google Play selon votre appareil. En moins de 2 minutes, votre communaute est dans votre poche.
-              </p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 32 }}>
-                <div style={{ padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
-                  Google Play
+          <div style={{ textAlign: 'center', marginBottom: 64 }}>
+            <span className="eyebrow">Fonctionnalités</span>
+            <h2 style={{ fontSize: 52, marginTop: 20 }}>Tout ce dont vous avez<br />besoin, en un seul endroit.</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            {FEATURES.map((f, i) => (
+              <div key={i} style={{ padding: '36px 32px', background: f.bg, borderRadius: 28 }}>
+                <div style={{ width: 52, height: 52, borderRadius: 16, background: f.color, display: 'grid', placeItems: 'center', marginBottom: 20 }}>
+                  <Icon name={f.icon} size={24} color="white" />
                 </div>
-                <div style={{ padding: '14px 22px', background: '#0a0a0a', color: 'white', borderRadius: 12, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
-                  App Store
-                </div>
+                <h3 style={{ fontSize: 20, lineHeight: 1.2, marginBottom: 12 }}>{f.title}</h3>
+                <p style={{ fontSize: 15, color: '#3A3A3A', lineHeight: 1.6 }}>{f.desc}</p>
               </div>
-            </div>
-            <div style={{ display: 'flex', gap: 24, justifyContent: 'center' }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ width: 180, height: 180, background: '#0E47AB', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', position: 'relative' }}>
-                  <div style={{ width: 120, height: 120, background: 'white', borderRadius: 12, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 4, padding: 12 }}>
-                    {Array.from({ length: 25 }).map((_, i) => (
-                      <div key={i} style={{ background: [0,1,5,6,2,3,7,9,10,11,15,16,18,19,23,24].includes(i) ? '#0a0a0a' : 'white', borderRadius: 2 }} />
-                    ))}
-                  </div>
-                </div>
-                <div style={{ fontSize: 13, fontWeight: 700, marginTop: 12, color: '#0a0a0a' }}>Android</div>
-                <div style={{ fontSize: 11, color: '#9B9B9B' }}>Google Play</div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ width: 180, height: 180, background: '#0a0a0a', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
-                  <div style={{ width: 120, height: 120, background: 'white', borderRadius: 12, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 4, padding: 12 }}>
-                    {Array.from({ length: 25 }).map((_, i) => (
-                      <div key={i} style={{ background: [0,2,4,6,8,10,12,14,16,18,20,22,24,3,7,11,15,19].includes(i) ? '#0a0a0a' : 'white', borderRadius: 2 }} />
-                    ))}
-                  </div>
-                </div>
-                <div style={{ fontSize: 13, fontWeight: 700, marginTop: 12, color: '#0a0a0a' }}>iPhone</div>
-                <div style={{ fontSize: 11, color: '#9B9B9B' }}>App Store</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: '64px 64px 120px' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 48, fontWeight: 800 }}>Pret a demarrer ?</h2>
-          <p style={{ fontSize: 17, color: '#6B6B6B', marginTop: 16, maxWidth: 480, margin: '16px auto 0', lineHeight: 1.6 }}>
-            Creez votre compte gratuitement et telechargez l'application en moins de 5 minutes.
-          </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
-            <NavLink to="/inscription" className="btn btn-primary btn-xl">
-              Creer mon compte gratuitement
-              <Icon name="arrow" size={16} color="white" />
-            </NavLink>
+      {/* BÊTA SIGNUP */}
+      <section id="notify" style={{ padding: '100px 64px 120px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/com1.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.07 }} />
+        <div style={{ position: 'absolute', bottom: -120, left: '50%', transform: 'translateX(-50%)', width: 700, height: 350, borderRadius: '50%', background: '#0E47AB', opacity: 0.18, filter: 'blur(100px)' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(212,167,91,0.12)', border: '1px solid rgba(212,167,91,0.25)', borderRadius: 999, marginBottom: 32 }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#D4A75B' }} />
+            <span style={{ fontSize: 13, fontWeight: 700, color: '#D4A75B' }}>En développement actif</span>
           </div>
+          <h2 style={{ fontSize: 64, color: 'white', lineHeight: 0.92, maxWidth: 700, margin: '0 auto' }}>
+            Soyez parmi<br />
+            <span style={{ color: '#D4A75B' }}>les premiers.</span>
+          </h2>
+          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', marginTop: 24, maxWidth: 480, margin: '24px auto 0', lineHeight: 1.6 }}>
+            Rejoignez la liste bêta et recevez un accès en avant-première à l'application Society dès T4 2026.
+          </p>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 44, flexWrap: 'wrap' }}>
+            <input
+              type="email"
+              placeholder="votre@email.com"
+              style={{ padding: '18px 24px', borderRadius: 14, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.07)', color: 'white', fontSize: 15, width: 320, outline: 'none', maxWidth: '100%', boxSizing: 'border-box' }}
+            />
+            <button className="btn btn-gold btn-lg">
+              Je m'inscris en bêta
+              <Icon name="arrow" size={16} color="#0a0a0a" />
+            </button>
+          </div>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', marginTop: 16 }}>2 000+ personnes déjà inscrites · Aucun spam</p>
         </div>
       </section>
 
