@@ -39,7 +39,7 @@ export default function Accueil() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 56, flexWrap: 'wrap' }}>
                 <div className="avatars">
                   {['p_aw_fem_1.jpg', 'p_aw_hom_1.jpg', 'p_aw_fem_3.jpg', 'p_aw_fem_4.jpg', 'p_aw_hom_2.jpg'].map(img => (
-                    <div key={img} style={{ backgroundImage: `url(/assets/${img})` }} />
+                    <div key={img} style={{ backgroundImage: `url(./assets/${img})` }} />
                   ))}
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function Accueil() {
               <div style={{ position: 'absolute', inset: 0, background: '#0E47AB', borderRadius: 40, transform: 'rotate(-3deg)' }} />
               <div style={{ position: 'absolute', top: 30, right: 40, width: 200, height: 200, background: '#D4A75B', borderRadius: 999 }} />
               <div style={{ position: 'absolute', top: 60, left: '50%', transform: 'translateX(-50%)', width: 280, aspectRatio: '9 / 19.5', borderRadius: 42, border: '10px solid #0a0a0a', overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.3)', background: '#0a0a0a' }}>
-                <img src="/assets/screen_app1.png" alt="Society app" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <img src="./assets/screen_app1.png" alt="Society app" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
               </div>
               <div style={{ position: 'absolute', top: 120, left: -20, background: 'white', padding: 16, borderRadius: 20, boxShadow: '0 20px 50px rgba(0,0,0,0.15)', width: 200 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
@@ -172,7 +172,7 @@ export default function Accueil() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
                 <div style={{ display: 'flex' }}>
                   {['p_aw_fem_2.jpg', 'p_aw_hom_3.jpg', 'p_aw_fem_4.jpg'].map((img, i) => (
-                    <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(/assets/${img})`, backgroundSize: 'cover', border: '2px solid white', marginLeft: i ? -10 : 0 }} />
+                    <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(./assets/${img})`, backgroundSize: 'cover', border: '2px solid white', marginLeft: i ? -10 : 0 }} />
                   ))}
                 </div>
                 <div style={{ padding: '6px 14px', background: '#0E47AB', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>+ 12 matchs</div>
@@ -193,7 +193,7 @@ export default function Accueil() {
               <div className="module-tag" style={{ background: 'rgba(255,255,255,0.6)' }}>05 — Espace Leader</div>
               <h3 style={{ fontSize: 28, marginTop: 12 }}>Votre audience.<br />Votre algorithme.</h3>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 16, padding: '12px 14px', background: 'rgba(255,255,255,0.7)', borderRadius: 14, backdropFilter: 'blur(10px)' }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundImage: 'url(/assets/p_aw_fem_5.jpg)', backgroundSize: 'cover', flexShrink: 0 }} />
+                <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundImage: 'url(./assets/p_aw_fem_5.jpg)', backgroundSize: 'cover', flexShrink: 0 }} />
                 <div>
                   <div style={{ fontWeight: 800, fontSize: 14 }}>Aïssatou D.</div>
                   <div style={{ fontSize: 12, color: '#6B6B6B' }}>+ 4 200 fans abonnés</div>
@@ -220,7 +220,7 @@ export default function Accueil() {
               { n: 'Groupes religieux', img: 'p_seg_rel.jpg', d: 'Communication multi-paroisses, collectes traçables, fidèles engagés.', count: '12 000+' },
               { n: 'Leaders & Influenceurs', img: 'p_seg_lead.jpg', d: 'Communauté propriétaire, monétisation directe, indépendance.', count: '4 000+' },
             ].map((s, i) => (
-              <div key={i} style={{ borderRadius: 24, overflow: 'hidden', position: 'relative', aspectRatio: '4/5', backgroundImage: `url(/assets/${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+              <div key={i} style={{ borderRadius: 24, overflow: 'hidden', position: 'relative', aspectRatio: '4/5', backgroundImage: `url(./assets/${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%)' }} />
                 <div style={{ position: 'absolute', top: 20, right: 20, padding: '6px 12px', background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>{s.count} en CI</div>
                 <div style={{ position: 'absolute', bottom: 28, left: 28, right: 28 }}>
@@ -266,7 +266,7 @@ export default function Accueil() {
         <div className="container">
           <div className="two-col-grid">
             <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '4/5' }}>
-              <img src="/assets/p_temoin.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="témoin" />
+              <img src="./assets/p_temoin.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="témoin" />
             </div>
             <div>
               <span className="eyebrow">Ils nous font confiance</span>

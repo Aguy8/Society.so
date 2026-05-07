@@ -122,10 +122,10 @@ export default function Presse() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div style={{ background: 'white', borderRadius: 20, padding: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E5E5E5', minHeight: 160 }}>
-                <img src="/assets/logo_society.png" alt="Logo Society" style={{ maxWidth: 140, maxHeight: 80, objectFit: 'contain' }} />
+                <img src="./assets/logo_society.png" alt="Logo Society" style={{ maxWidth: 140, maxHeight: 80, objectFit: 'contain' }} />
               </div>
               <div style={{ background: '#0a0a0a', borderRadius: 20, padding: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 160 }}>
-                <img src="/assets/logo_difero_blanc.png" alt="Logo Society blanc" style={{ maxWidth: 140, maxHeight: 80, objectFit: 'contain', filter: 'brightness(10)' }} />
+                <img src="./assets/logo_difero_blanc.png" alt="Logo Society blanc" style={{ maxWidth: 140, maxHeight: 80, objectFit: 'contain', filter: 'brightness(10)' }} />
               </div>
               <div style={{ background: '#0E47AB', borderRadius: 20, padding: 32, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 100, gridColumn: '1 / -1' }}>
                 <div style={{ color: 'white', fontWeight: 900, fontSize: 28, letterSpacing: '-0.02em' }}>Society</div>

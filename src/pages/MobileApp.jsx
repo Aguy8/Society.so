@@ -137,13 +137,13 @@ export default function MobileApp() {
             {/* Phone cluster */}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 16, height: 560, overflow: 'hidden' }}>
               <div className="phone-mockup" style={{ transform: 'rotate(-6deg) translateY(40px)', transformOrigin: 'bottom center' }}>
-                <img src="/assets/screen_app3.png" className="phone-screen" alt="Communauté" />
+                <img src="./assets/screen_app3.png" className="phone-screen" alt="Communauté" />
               </div>
               <div className="phone-mockup" style={{ transform: 'scale(1.08)', zIndex: 2, boxShadow: '0 60px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)' }}>
-                <img src="/assets/screen_app1.png" className="phone-screen" alt="Feed Society" />
+                <img src="./assets/screen_app1.png" className="phone-screen" alt="Feed Society" />
               </div>
               <div className="phone-mockup" style={{ transform: 'rotate(6deg) translateY(40px)', transformOrigin: 'bottom center' }}>
-                <img src="/assets/screen_app2.png" className="phone-screen" alt="Dashboard" />
+                <img src="./assets/screen_app2.png" className="phone-screen" alt="Dashboard" />
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function MobileApp() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center', direction: 'ltr' }}>
                   <div className="phone-mockup" style={{ background: screen.bg }}>
-                    <img src={`/assets/${screen.img}`} className="phone-screen" alt={screen.label} />
+                    <img src={`./assets/${screen.img}`} className="phone-screen" alt={screen.label} />
                   </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function MobileApp() {
 
       {/* BÊTA SIGNUP */}
       <section id="notify" style={{ padding: '100px 64px 120px', background: '#0a0a0a', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/com1.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.07 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(./assets/com1.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.07 }} />
         <div style={{ position: 'absolute', bottom: -120, left: '50%', transform: 'translateX(-50%)', width: 700, height: 350, borderRadius: '50%', background: '#0E47AB', opacity: 0.18, filter: 'blur(100px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(212,167,91,0.12)', border: '1px solid rgba(212,167,91,0.25)', borderRadius: 999, marginBottom: 32 }}>

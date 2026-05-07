@@ -28,7 +28,7 @@ export default function Segment() {
 
       {/* HERO — immersif plein écran */}
       <section style={{ position: 'relative', minHeight: 680, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 64px 72px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(/assets/${s.heroImg})`, backgroundSize: 'cover', backgroundPosition: 'center top' }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(./assets/${s.heroImg})`, backgroundSize: 'cover', backgroundPosition: 'center top' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.88) 100%)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: `linear-gradient(90deg, ${s.color}, transparent)` }} />
 
@@ -137,7 +137,7 @@ export default function Segment() {
         <div className="container">
           <div className="two-col-grid" style={{ alignItems: 'center', gap: 64 }}>
             <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '1/1', boxShadow: '0 32px 64px rgba(0,0,0,0.25)' }}>
-              <img src={`/assets/${s.temoignage.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={s.temoignage.auteur} />
+              <img src={`./assets/${s.temoignage.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={s.temoignage.auteur} />
             </div>
             <div>
               <div style={{ fontSize: 96, color: 'rgba(255,255,255,0.2)', fontFamily: 'Georgia, serif', lineHeight: 1, marginBottom: -24 }}>"</div>

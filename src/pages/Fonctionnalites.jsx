@@ -119,7 +119,7 @@ export default function Fonctionnalites() {
                     { n: 'Salimata B.', r: 'Membre actif', img: 'p_aw_fem_6.jpg' },
                   ].map((m, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: 10, background: '#F8F8F8', borderRadius: 10 }}>
-                      <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundImage: `url(/assets/${m.img})`, backgroundSize: 'cover' }} />
+                      <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundImage: `url(./assets/${m.img})`, backgroundSize: 'cover' }} />
                       <div style={{ flex: 1 }}>
                         <div style={{ fontSize: 13, fontWeight: 700 }}>{m.n}</div>
                         <div style={{ fontSize: 11, color: '#6B6B6B' }}>{m.r}</div>
@@ -194,7 +194,7 @@ export default function Fonctionnalites() {
                     { n: 'Ibrahim D.', m: '10 000 FCFA', img: 'p_aw_hom_4.jpg' },
                   ].map((d, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0', borderTop: '1px solid #F2F2F2' }}>
-                      <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundImage: `url(/assets/${d.img})`, backgroundSize: 'cover', flexShrink: 0 }} />
+                      <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundImage: `url(./assets/${d.img})`, backgroundSize: 'cover', flexShrink: 0 }} />
                       <div style={{ flex: 1, fontSize: 13, fontWeight: 600 }}>{d.n}</div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#0E47AB' }}>{d.m}</div>
                     </div>
@@ -260,7 +260,7 @@ export default function Fonctionnalites() {
               <div style={{ background: 'white', borderRadius: 20, padding: 24, boxShadow: '0 10px 40px rgba(0,0,0,0.06)' }}>
                 <div style={{ fontSize: 11, color: '#0F8B4F', fontWeight: 700, textTransform: 'uppercase' }}>Profil trouvé</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundImage: 'url(/assets/p_aw_hom_3.jpg)', backgroundSize: 'cover', flexShrink: 0 }} />
+                  <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundImage: 'url(./assets/p_aw_hom_3.jpg)', backgroundSize: 'cover', flexShrink: 0 }} />
                   <div>
                     <div style={{ fontSize: 16, fontWeight: 700 }}>Mamadou T.</div>
                     <div style={{ fontSize: 13, color: '#6B6B6B' }}>JCI Abidjan · React / Node.js</div>
@@ -372,7 +372,7 @@ export default function Fonctionnalites() {
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{ background: 'white', borderRadius: 20, padding: 24, marginBottom: 16, boxShadow: '0 10px 40px rgba(0,0,0,0.08)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <img src="/assets/p_aw_fem_5.jpg" style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover' }} alt="" />
+                    <img src="./assets/p_aw_fem_5.jpg" style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover' }} alt="" />
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 800, fontSize: 16 }}>Aïssatou D.</div>
                       <div style={{ fontSize: 13, color: '#6B6B6B' }}>Coach bien-être · Abidjan</div>

@@ -97,7 +97,7 @@ export default function APropos() {
             ].map((m, i) => (
               <div key={i}>
                 <div style={{ aspectRatio: '4/5', borderRadius: 20, overflow: 'hidden' }}>
-                  <img src={`/assets/${m.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={m.n} />
+                  <img src={`./assets/${m.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={m.n} />
                 </div>
                 <div style={{ marginTop: 16, fontWeight: 700, fontSize: 17 }}>{m.n}</div>
                 <div style={{ fontSize: 14, color: '#6B6B6B' }}>{m.r}</div>
