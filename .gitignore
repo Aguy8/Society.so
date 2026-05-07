@@ -3,3 +3,10 @@ dist/
 *.db
 *.db-shm
 *.db-wal
+
+# Local image assets (replaced by Unsplash CDN)
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.gif
+assets/*.webp
