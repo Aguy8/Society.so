@@ -169,14 +169,6 @@ export default function Accueil() {
               <div className="module-tag" style={{ background: 'white' }}>03 — Mise en relation</div>
               <h3 style={{ fontSize: 28, marginTop: 12 }}>L'algorithme qui connecte.</h3>
               <p style={{ marginTop: 12, fontSize: 15 }}>Besoins ↔ ressources. Bénévoles, expertises, partenaires RSE.</p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
-                <div style={{ display: 'flex' }}>
-                  {['p_aw_fem_2.jpg', 'p_aw_hom_3.jpg', 'p_aw_fem_4.jpg'].map((img, i) => (
-                    <div key={i} style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(/assets/${img})`, backgroundSize: 'cover', border: '2px solid white', marginLeft: i ? -10 : 0 }} />
-                  ))}
-                </div>
-                <div style={{ padding: '6px 14px', background: '#0E47AB', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700 }}>+ 12 matchs</div>
-              </div>
             </div>
 
             <div className="module-card module-dark" style={{ gridColumn: 'span 4' }}>
@@ -192,13 +184,7 @@ export default function Accueil() {
             <div className="module-card module-gradient" style={{ gridColumn: 'span 4' }}>
               <div className="module-tag" style={{ background: 'rgba(255,255,255,0.6)' }}>05 — Espace Leader</div>
               <h3 style={{ fontSize: 28, marginTop: 12 }}>Votre audience.<br />Votre algorithme.</h3>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 16, padding: '12px 14px', background: 'rgba(255,255,255,0.7)', borderRadius: 14, backdropFilter: 'blur(10px)' }}>
-                <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundImage: 'url(/assets/p_aw_fem_5.jpg)', backgroundSize: 'cover', flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontWeight: 800, fontSize: 14 }}>Aïssatou D.</div>
-                  <div style={{ fontSize: 12, color: '#6B6B6B' }}>+ 4 200 fans abonnés</div>
-                </div>
-              </div>
+              <p style={{ marginTop: 12, fontSize: 15 }}>Q&A, lives, contenus premium — sans dépendre d'Instagram ou TikTok.</p>
             </div>
           </div>
         </div>

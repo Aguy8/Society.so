@@ -12,7 +12,7 @@ db.exec(`
     nom TEXT NOT NULL,
     type TEXT NOT NULL,
     description TEXT,
-    pays TEXT DEFAULT 'Cote d Ivoire',
+    pays TEXT DEFAULT 'Côte d\'Ivoire',
     ville TEXT,
     membres_count TEXT,
     couleur TEXT DEFAULT '#0E47AB',

@@ -12,7 +12,6 @@ const links = [
 
 export default function Nav({ variant = 'light' }) {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [founderOpen, setFounderOpen] = useState(false)
   const navigate = useNavigate()
 
   const cls = variant === 'dark' ? 'nav dark' : variant === 'blue' ? 'nav blue' : 'nav'
@@ -35,31 +34,8 @@ export default function Nav({ variant = 'light' }) {
           ))}
         </div>
 
-        <div className="nav-cta nav-cta--desktop" style={{ position: 'relative' }}>
-          <div style={{ position: 'relative' }}>
-            <button
-              onClick={() => setFounderOpen(o => !o)}
-              className="btn btn-ghost"
-              style={{ color: ghostColor, display: 'flex', alignItems: 'center', gap: 6 }}>
-              Connexion
-              <span style={{ fontSize: 10, transition: 'transform 0.2s', display: 'inline-block', transform: founderOpen ? 'rotate(180deg)' : 'none' }}>▼</span>
-            </button>
-            {founderOpen && (
-              <div style={{ position: 'absolute', top: 'calc(100% + 10px)', right: 0, background: 'white', borderRadius: 16, boxShadow: '0 20px 60px rgba(0,0,0,0.15)', border: '1px solid #E5E5E5', minWidth: 220, overflow: 'hidden', zIndex: 100 }}>
-                <div style={{ padding: '12px 16px', borderBottom: '1px solid #F2F2F2', fontSize: 11, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Espace membre</div>
-                <button onClick={() => { setFounderOpen(false); alert('Connexion membre — disponible au lancement Q3 2026') }} style={{ width: '100%', padding: '14px 20px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: 8, background: '#E8EFFC', display: 'grid', placeItems: 'center' }}><Icon name="users" size={14} color="#0E47AB" /></div>
-                  Se connecter
-                </button>
-                <div style={{ padding: '12px 16px', borderTop: '1px solid #F2F2F2', borderBottom: '1px solid #F2F2F2', fontSize: 11, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Fondateur Society</div>
-                <NavLink to="/dashboard" onClick={() => setFounderOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px', textDecoration: 'none', color: '#0a0a0a', fontSize: 14, fontWeight: 600 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: 8, background: '#FFF8E5', display: 'grid', placeItems: 'center' }}><Icon name="grid" size={14} color="#D4A75B" /></div>
-                  Dashboard admin
-                </NavLink>
-                <div style={{ padding: '10px 16px', background: '#F8F8F8', fontSize: 11, color: '#6B6B6B' }}>Réservé à l'équipe Difero Fundry</div>
-              </div>
-            )}
-          </div>
+        <div className="nav-cta nav-cta--desktop">
+          <button className="btn btn-ghost" style={{ color: ghostColor }}>Se connecter</button>
           <NavLink to="/inscription" className={variant === 'blue' ? 'btn btn-white' : 'btn btn-dark'}>
             Inscrire ma communauté
             <Icon name="arrow" size={14} color="currentColor" />
@@ -81,19 +57,11 @@ export default function Nav({ variant = 'light' }) {
               {l.label}
             </NavLink>
           ))}
-          <NavLink to="/dashboard" className="nav-mobile-link" onClick={() => setMenuOpen(false)}
-            style={{ color: '#D4A75B', fontWeight: 700 }}>
-            Dashboard fondateur
-          </NavLink>
           <NavLink to="/inscription" className="btn btn-primary" onClick={() => setMenuOpen(false)}
             style={{ marginTop: 8 }}>
             Inscrire ma communauté
           </NavLink>
         </div>
-      )}
-
-      {founderOpen && (
-        <div onClick={() => setFounderOpen(false)} style={{ position: 'fixed', inset: 0, zIndex: 99 }} />
       )}
     </>
   )

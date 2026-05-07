@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Icon from '../components/Icon.jsx'
-import { TYPES_INSCRIPTION, SEGMENTS } from '../data/segments.js'
+import { TYPES_INSCRIPTION } from '../data/segments.js'
 import { PAYS_NOMS, getVillesByPays } from '../data/countries.js'
 import { api } from '../api/client.js'
 
@@ -106,21 +106,17 @@ export default function Inscription() {
         type: typeObj?.n || form.type,
         description: form.description,
         pays: form.pays,
-        ville: form.ville || '',
+        ville: form.ville,
         membres_count: form.membres_count,
         couleur: form.couleur,
         plan: form.plan,
       })
+      navigate('/confirmation')
     } catch (err) {
-      // If backend is offline, still navigate — data will be persisted when available
-      if (!err.message?.includes('Failed to fetch') && !err.message?.includes('NetworkError')) {
-        setErrors({ submit: err.message })
-        setSubmitting(false)
-        return
-      }
+      setErrors({ submit: err.message })
+    } finally {
+      setSubmitting(false)
     }
-    navigate('/confirmation')
-    setSubmitting(false)
   }
 
   const typeActuel = TYPES_INSCRIPTION.find(t => t.slug === form.type)
@@ -174,18 +170,12 @@ export default function Inscription() {
                     {/* Type */}
                     <div>
                       <label style={{ fontSize: 14, fontWeight: 600 }}>Type de communauté <span style={{ color: '#C23B5A' }}>*</span></label>
-                      <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
-                        {SEGMENTS.map((s) => (
-                          <button type="button" key={s.slug} onClick={() => set('type', s.slug)}
-                            style={{ padding: 0, border: `2.5px solid ${form.type === s.slug ? s.color : 'transparent'}`, borderRadius: 16, overflow: 'hidden', cursor: 'pointer', background: 'none', fontFamily: 'inherit', position: 'relative', aspectRatio: '3/4', boxShadow: form.type === s.slug ? `0 0 0 2px ${s.color}44` : '0 2px 12px rgba(0,0,0,0.08)' }}>
-                            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(/assets/${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-                            <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, transparent 20%, ${s.color}ee 100%)` }} />
-                            {form.type === s.slug && (
-                              <div style={{ position: 'absolute', top: 8, right: 8, width: 22, height: 22, borderRadius: '50%', background: 'white', display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 900, color: s.color }}>✓</div>
-                            )}
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '10px 10px 12px', textAlign: 'center' }}>
-                              <div style={{ fontSize: 12, fontWeight: 700, color: 'white', lineHeight: 1.3 }}>{s.nom}</div>
-                            </div>
+                      <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+                        {TYPES_INSCRIPTION.map((t) => (
+                          <button type="button" key={t.slug} onClick={() => set('type', t.slug)}
+                            style={{ padding: '14px 8px', border: `1.5px solid ${form.type === t.slug ? t.color : '#E5E5E5'}`, borderRadius: 14, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer', background: form.type === t.slug ? `${t.color}11` : 'white', fontFamily: 'inherit' }}>
+                            <div style={{ width: 28, height: 28, borderRadius: '50%', background: form.type === t.slug ? t.color : '#F2F2F2', transition: 'background 0.2s' }} />
+                            <span style={{ fontSize: 12, fontWeight: 600, textAlign: 'center', lineHeight: 1.3, color: form.type === t.slug ? t.color : '#0a0a0a' }}>{t.n}</span>
                           </button>
                         ))}
                       </div>
