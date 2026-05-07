@@ -178,7 +178,7 @@ export default function Inscription() {
                         {SEGMENTS.map((s) => (
                           <button type="button" key={s.slug} onClick={() => set('type', s.slug)}
                             style={{ padding: 0, border: `2.5px solid ${form.type === s.slug ? s.color : 'transparent'}`, borderRadius: 16, overflow: 'hidden', cursor: 'pointer', background: 'none', fontFamily: 'inherit', position: 'relative', aspectRatio: '3/4', boxShadow: form.type === s.slug ? `0 0 0 2px ${s.color}44` : '0 2px 12px rgba(0,0,0,0.08)' }}>
-                            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(./assets/${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+                            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${s.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                             <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, transparent 20%, ${s.color}ee 100%)` }} />
                             {form.type === s.slug && (
                               <div style={{ position: 'absolute', top: 8, right: 8, width: 22, height: 22, borderRadius: '50%', background: 'white', display: 'grid', placeItems: 'center', fontSize: 12, fontWeight: 900, color: s.color }}>✓</div>

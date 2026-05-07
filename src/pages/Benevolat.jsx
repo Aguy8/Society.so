@@ -57,7 +57,7 @@ export default function Benevolat() {
 
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: 640, display: 'flex', alignItems: 'flex-end', padding: '0 64px 80px', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(./assets/com1.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center 30%' }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80)', backgroundSize: 'cover', backgroundPosition: 'center 30%' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(14,71,171,0.4) 0%, rgba(10,10,10,0.88) 100%)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #0E47AB, #D4A75B)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -123,7 +123,7 @@ export default function Benevolat() {
             </div>
             <div>
               <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '4/5', position: 'relative', boxShadow: '0 32px 64px rgba(0,0,0,0.15)' }}>
-                <img src="./assets/com4.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Bénévolat" />
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Bénévolat" />
                 <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24 }}>
                   <div style={{ background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(20px)', borderRadius: 20, padding: '20px 24px' }}>
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#0E47AB', marginBottom: 8 }}>Module Bénévolat Society</div>
@@ -202,7 +202,7 @@ export default function Benevolat() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '1/1', boxShadow: '0 32px 64px rgba(0,0,0,0.3)' }}>
-              <img src="./assets/p_aw_fem_3.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Testimonial" />
+              <img src="https://images.unsplash.com/photo-1489424731084-a3d5bc15a39b?auto=format&fit=crop&w=800&q=80" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Testimonial" />
             </div>
             <div>
               <div style={{ fontSize: 96, color: 'rgba(255,255,255,0.15)', fontFamily: 'Georgia, serif', lineHeight: 1, marginBottom: -24 }}>"</div>

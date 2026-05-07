@@ -80,7 +80,7 @@ export default function Nav({ variant = 'light' }) {
             {founderOpen && (
               <div style={{ position: 'absolute', top: 'calc(100% + 10px)', right: 0, background: 'white', borderRadius: 16, boxShadow: '0 20px 60px rgba(0,0,0,0.15)', border: '1px solid #E5E5E5', minWidth: 220, overflow: 'hidden', zIndex: 100 }}>
                 <div style={{ padding: '12px 16px', borderBottom: '1px solid #F2F2F2', fontSize: 11, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Espace membre</div>
-                <button onClick={() => { setFounderOpen(false); alert('Connexion membre — disponible au lancement Q3 2026') }} style={{ width: '100%', padding: '14px 20px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <button onClick={() => { setFounderOpen(false); alert('Connexion membre — disponible au lancement') }} style={{ width: '100%', padding: '14px 20px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: '#E8EFFC', display: 'grid', placeItems: 'center' }}><Icon name="users" size={14} color="#0E47AB" /></div>
                   Se connecter
                 </button>

@@ -29,7 +29,7 @@ export default function PourQui() {
             <div className="container">
               <div className="two-col-grid">
                 <div style={{ order: reverse ? 2 : 1, borderRadius: 32, overflow: 'hidden', aspectRatio: '4/5', position: 'relative' }}>
-                  <img src={`./assets/${s.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={s.nom} />
+                  <img src={`${s.img}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={s.nom} />
                   <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, transparent 50%, ${s.color}cc 100%)` }} />
                   <div style={{ position: 'absolute', top: 24, left: 24, padding: '8px 16px', background: 'rgba(255,255,255,0.95)', borderRadius: 999, fontSize: 13, fontWeight: 700 }}>
                     Segment {String(i + 1).padStart(2, '0')}
