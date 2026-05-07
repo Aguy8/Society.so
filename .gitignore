@@ -10,3 +10,8 @@ assets/*.jpeg
 assets/*.png
 assets/*.gif
 assets/*.webp
+public/assets/*.jpg
+public/assets/*.jpeg
+public/assets/*.png
+public/assets/*.gif
+public/assets/*.webp
